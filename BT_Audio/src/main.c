@@ -36,14 +36,15 @@ static uint16_t battery_service_handle = 0; // Handle for battery service
 static uint16_t battery_char_handle = 0; // Handle for battery level CHARACTERISTIC
 static const char *TAG = "BLE_MONITOR"; // Set tag for logging
 static uint16_t gesture_cccd_handle = 0; // Handle for Client Characteristic Configuration Descriptor (CCCD)
-// Used to 
-static bool gesture_notify_enabled = false;
+// Used to enable and disable notifications for the gesture characteristic
+static bool gesture_notify_enabled = false; // Flag to track if notifications are enabled for the gesture characteristic
 
 // Define buffer for gesture text data 
 static char gesture_text[64] = "READY";
 static char last_sent[64] = "";
+// Define array of words we want to set, TESTING PURPOSES ONLY!
+const char* test_gestures[] = {"READY", "SET", "LET'S", "GO", "IS","THIS", "WORKING"};
 // BLE advertising parameters
-
 static esp_ble_adv_params_t adv_params = {
     .adv_int_min = 0x20,
     .adv_int_max = 0x40,
@@ -218,8 +219,8 @@ static void gatts_event_handler(esp_gatts_cb_event_t event,
         }
         break;
 
-        // confirms the CCCD was added and saves its handle for later use
-        case ESP_GATTS_ADD_CHAR_DESCR_EVT:
+    // confirms the CCCD was added and saves its handle for later use
+    case ESP_GATTS_ADD_CHAR_DESCR_EVT:
         ESP_LOGI(TAG, "Descriptor added, handle=%d", param->add_char_descr.attr_handle);
         gesture_cccd_handle = param->add_char_descr.attr_handle;
         break;
@@ -345,12 +346,12 @@ void app_main(void)
     
     while (1) {
         ESP_LOGI(TAG, "This totally works!");
-        vTaskDelay(pdMS_TO_TICKS(100));
+        vTaskDelay(pdMS_TO_TICKS(1000));
         
         // currently uses polling to send gestures. can change to using ISR in future 
         // check if device connected, gesture notification enabled, gesture is different 
-        if (device_connected && gesture_notify_enabled &&
-        strncmp(gesture_text, last_sent, sizeof(last_sent)) != 0) {
+        if (device_connected && gesture_notify_enabled ) {
+        /*&& strncmp(gesture_text, last_sent, sizeof(last_sent)) != 0 */ 
             
             // then send the text through 
             send_gesture_notify(gesture_text);
@@ -358,6 +359,10 @@ void app_main(void)
             // remember what we sent
             strncpy(last_sent, gesture_text, sizeof(last_sent) - 1); // copy new gesture text to last_sent
             last_sent[sizeof(last_sent) - 1] = '\0'; // ensure last_sent null-terminates 
+
+            // copy random gesture text from test_gestures to gesture_text to test notifications
+            snprintf(gesture_text, sizeof(gesture_text), "%s",
+            test_gestures[rand() % (sizeof(test_gestures) / sizeof(test_gestures[0]))]);
         }
     }
 }
