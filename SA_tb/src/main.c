@@ -119,13 +119,13 @@ static void play_silence(int duration_ms)
 static void fixed_tone_test(void)
 {
     printf("\n=== Fixed Tone Test ===\n");
-    play_tone(500.0f, 0.25f, 1500);
+    play_tone(500.0f, 0.15f, 1500);
     play_silence(300);
 
-    play_tone(1000.0f, 0.25f, 1500);
+    play_tone(1000.0f, 0.15f, 1500);
     play_silence(300);
 
-    play_tone(2000.0f, 0.25f, 1500);
+    play_tone(2000.0f, 0.15f, 1500);
     play_silence(300);
 }
 
