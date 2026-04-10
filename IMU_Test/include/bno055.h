@@ -13,6 +13,7 @@
 #include "esp_err.h"
 
 extern const char *BNO055_TAG;
+extern const char *DATA_TAG;
 
 typedef enum bno055_operation_mode_t
 {
@@ -52,6 +53,7 @@ typedef enum bno055_sensor_t
     GYROSCOPE = 0x14,
     EULER_ANGLE = 0x1a,
     QUATERNION = 0x20,
+    QUATERNION_DATA_ONLY = 0x21,
     LINEAR_ACCELERATION = 0x28,
     GRAVITY = 0x2e,
     TEMPERATURE = 0x34

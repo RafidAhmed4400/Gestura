@@ -2,6 +2,7 @@
 #include "bno055_priv.h"
 
 const char *BNO055_TAG = "BNO055";
+const char *DATA_TAG = "";
 
 /**
  * @brief Set the page of the BNO055 sensor.
@@ -536,6 +537,7 @@ esp_err_t bno055_get_readings(bno055_t *imu, bno055_sensor_t sensor)
     switch (sensor)
     {
     case QUATERNION:
+    case QUATERNION_DATA_ONLY:
         reg_count = 8;
         break;
 
@@ -614,6 +616,14 @@ esp_err_t bno055_get_readings(bno055_t *imu, bno055_sensor_t sensor)
         imu->quaternion.y = u8_to_f(register_content[5], register_content[4], imu->config.sensor_scale.quaternion);
         imu->quaternion.z = u8_to_f(register_content[7], register_content[6], imu->config.sensor_scale.quaternion);
         ESP_LOGV(BNO055_TAG, "Quaternion - W: %.3f, X: %.3f, Y: %.3f, Z: %.3f", imu->quaternion.w, imu->quaternion.x, imu->quaternion.y, imu->quaternion.z);
+        return ESP_OK;
+
+    case QUATERNION_DATA_ONLY:
+        imu->quaternion.w = u8_to_f(register_content[1], register_content[0], imu->config.sensor_scale.quaternion);
+        imu->quaternion.x = u8_to_f(register_content[3], register_content[2], imu->config.sensor_scale.quaternion);
+        imu->quaternion.y = u8_to_f(register_content[5], register_content[4], imu->config.sensor_scale.quaternion);
+        imu->quaternion.z = u8_to_f(register_content[7], register_content[6], imu->config.sensor_scale.quaternion);
+        ESP_LOGV(DATA_TAG, ", %.3f, %.3f, %.3f, %.3f", imu->quaternion.w, imu->quaternion.x, imu->quaternion.y, imu->quaternion.z);
         return ESP_OK;
 
     case LINEAR_ACCELERATION:

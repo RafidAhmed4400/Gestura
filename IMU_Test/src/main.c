@@ -15,6 +15,7 @@
 #define CONFIG_BNO055_I2C_FREQUENCY 400
 
 #define CONFIG_BLINK_PERIOD 1000
+#define CONFIG_DATA_PERIOD 10
 #define BLINK_GPIO 38
 
 static uint8_t s_led_state = 0;
@@ -68,6 +69,7 @@ void app_main() {
 
     esp_log_level_set("*", ESP_LOG_INFO);
     esp_log_level_set(BNO055_TAG, ESP_LOG_VERBOSE);
+    esp_log_level_set(DATA_TAG, ESP_LOG_VERBOSE);
 
     bno055_t bno055 = {0};
 
@@ -98,15 +100,35 @@ void app_main() {
     ESP_ERROR_CHECK(bno055_initialize(&bno055));
     ESP_LOGI("MAIN", "BNO055 initialized");
 
+    ESP_ERROR_CHECK(bno055_configure(&bno055, NDOF_MODE, (ACC_MG | GY_RPS | EUL_DEG)));
+
+    ESP_LOGI("BNO055", "Calibrating the sensor, please move the sensor");
+    while (1)
+    {
+        ESP_ERROR_CHECK(bno055_get_calibration_status(&bno055));
+        if (bno055.config.is_calibrated)
+            break;
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+    ESP_LOGI("BNO055", "Calibration done");
+
     /* Configure the peripheral according to the LED type */
     configure_led();
 
+    int64_t loop_count = 0;
     while (1) {
-        ESP_LOGI(TAG, "Turning the LED %s!", s_led_state == true ? "ON" : "OFF");
-        blink_led();
-        /* Toggle the LED state */
-        s_led_state = !s_led_state;
-        vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+
+        bno055_get_readings(&bno055, QUATERNION_DATA_ONLY);
+
+        if (loop_count % 100 == 0) {
+            blink_led();
+            /* Toggle the LED state */
+            s_led_state = !s_led_state;
+        }
+
+        loop_count++; 
+        
+        vTaskDelay(CONFIG_DATA_PERIOD / portTICK_PERIOD_MS);
     }
 
 }
