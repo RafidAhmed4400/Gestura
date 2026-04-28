@@ -8,9 +8,10 @@
 #include "sdkconfig.h"
 
 #include "bno055.h"
+#include "flex_sensor.h"
 
 #define CONFIG_BNO055_SCL_PIN 9
-#define CONFIG_BNO055_SDA_PIN 8
+#define CONFIG_BNO055_SDA_PIN 18
 #define CONFIG_BNO055_I2C_ADDR 0x28
 #define CONFIG_BNO055_I2C_FREQUENCY 400
 
@@ -70,6 +71,7 @@ void app_main() {
     esp_log_level_set("*", ESP_LOG_INFO);
     esp_log_level_set(BNO055_TAG, ESP_LOG_VERBOSE);
     esp_log_level_set(DATA_TAG, ESP_LOG_VERBOSE);
+    esp_log_level_set(FSR_TAG, ESP_LOG_INFO);
 
     bno055_t bno055 = {0};
 
@@ -111,6 +113,11 @@ void app_main() {
         vTaskDelay(pdMS_TO_TICKS(100));
     }
     ESP_LOGI("BNO055", "Calibration done");
+    esp_log_level_set(BNO055_TAG, ESP_LOG_INFO);
+
+    /* flex sensor stuff */
+    flex_data_t flex_data = {0};
+    ESP_ERROR_CHECK(flex_init());
 
     /* Configure the peripheral according to the LED type */
     configure_led();
@@ -118,7 +125,11 @@ void app_main() {
     int64_t loop_count = 0;
     while (1) {
 
-        bno055_get_readings(&bno055, QUATERNION_DATA_ONLY);
+        bno055_get_readings(&bno055, QUATERNION);
+        flex_read_normalized(&flex_data);
+        ESP_LOGI(" ", ", %.3f, %.3f, %.3f, %.3f, %d, %d, %d, %d, %d", 
+                bno055.quaternion.w, bno055.quaternion.x, bno055.quaternion.y, bno055.quaternion.z, 
+                flex_data.fsr_pinky, flex_data.fsr_ring, flex_data.fsr_middle, flex_data.fsr_index, flex_data.fsr_thumb);
 
         if (loop_count % 100 == 0) {
             blink_led();
