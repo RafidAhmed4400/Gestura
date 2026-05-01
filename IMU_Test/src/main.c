@@ -125,9 +125,13 @@ void app_main() {
     int64_t loop_count = 0;
     while (1) {
 
+        bno055_get_readings(&bno055, GYROSCOPE);
+        bno055_get_readings(&bno055, LINEAR_ACCELERATION);
         bno055_get_readings(&bno055, QUATERNION);
         flex_read_normalized(&flex_data);
-        ESP_LOGI(" ", ", %.3f, %.3f, %.3f, %.3f, %d, %d, %d, %d, %d", 
+        ESP_LOGI(" ", ", %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %.3f, %d, %d, %d, %d, %d", 
+                bno055.gyroscope.x, bno055.gyroscope.y, bno055.gyroscope.z, 
+                bno055.linear_acceleration.x, bno055.linear_acceleration.y, bno055.linear_acceleration.z, 
                 bno055.quaternion.w, bno055.quaternion.x, bno055.quaternion.y, bno055.quaternion.z, 
                 flex_data.fsr_pinky, flex_data.fsr_ring, flex_data.fsr_middle, flex_data.fsr_index, flex_data.fsr_thumb);
 
