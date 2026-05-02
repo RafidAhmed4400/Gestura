@@ -8,8 +8,8 @@ extern "C" {
 #define GM_NUM_TIMESTEPS 140
 #define GM_NUM_FEATURES 15
 
-// Change this to match the number of classes
-#define GM_NUM_CLASSES 27
+// Change this to match the number of classes!!!! (Should be 27)!!
+#define GM_NUM_CLASSES 13
 
 void gesture_model_init(void);
 
