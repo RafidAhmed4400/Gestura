@@ -4,15 +4,35 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
+#include "driver/gpio.h"
 
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "led_strip.h"
+#include "sdkconfig.h"
 
 #include "driver/adc.h"
 
 #include "gesture_model.h"
+#include "bno055.h"
+#include "flex_sensor.h"
+
+static uint8_t s_led_state = 0;
+
+static led_strip_handle_t led_strip;
 
 static const char *TAG = "GESTURE_APP";
+
+// IMU BNO055 chip settings
+#define CONFIG_BNO055_SCL_PIN 9
+#define CONFIG_BNO055_SDA_PIN 18
+#define CONFIG_BNO055_I2C_ADDR 0x28
+#define CONFIG_BNO055_I2C_FREQUENCY 400
+
+// LED Blink constants
+#define CONFIG_BLINK_PERIOD 1000
+#define CONFIG_DATA_PERIOD 10
+#define BLINK_GPIO 38
 
 // NN Model settings
 #define NUM_TIMESTEPS 140
@@ -51,20 +71,72 @@ static float gesture_window[NUM_TIMESTEPS][NUM_FEATURES];
 static void adc_init(void);
 static int read_flex_adc(adc1_channel_t channel);
 static void read_all_flex_sensors(int *thumb, int *index, int *middle, int *ring, int *pinky);
-static void read_imu(float *gx, float *gy, float *gz, float *ax, float *ay, float *az, float *qx, float *qy, float *qz, float *qw);
 
-static void collect_gesture_window(void);
+static void collect_gesture_window(bno055_t* bno055);
 static void print_gesture_window_csv(int gesture_id, const char *label);
 static void run_gesture_classification(void);
 
+static void blink_led(void);
+static void configure_led(void);
 
 // Main app
 void app_main(void)
 {
+    esp_log_level_set("*", ESP_LOG_INFO);
+    esp_log_level_set(BNO055_TAG, ESP_LOG_VERBOSE);
+    esp_log_level_set(DATA_TAG, ESP_LOG_VERBOSE);
+    esp_log_level_set(FSR_TAG, ESP_LOG_INFO);
+
     ESP_LOGI(TAG, "Gesture recognition app starting...");
 
-    adc_init();
+    /* imu setup */
+    bno055_t bno055 = {0};
+    i2c_master_bus_config_t i2c_master_conf = {
+        .clk_source = I2C_CLK_SRC_DEFAULT,
+        .flags.enable_internal_pullup = true,
+        .glitch_ignore_cnt = 7,
+        .i2c_port = I2C_NUM_0,
+        .intr_priority = 0,
+        .scl_io_num = CONFIG_BNO055_SCL_PIN,
+        .sda_io_num = CONFIG_BNO055_SDA_PIN,
+        .trans_queue_depth = 0,
+    };
+    i2c_master_bus_handle_t i2c_master_bus = NULL;
+    ESP_ERROR_CHECK(i2c_new_master_bus(&i2c_master_conf, &i2c_master_bus));
+    i2c_device_config_t bno055_conf = {
+        .dev_addr_length = I2C_ADDR_BIT_LEN_7,
+        .device_address = CONFIG_BNO055_I2C_ADDR,
+        .flags.disable_ack_check = 0,
+        .scl_speed_hz = CONFIG_BNO055_I2C_FREQUENCY * 1000,
+        .scl_wait_us = 0xffff,
+    };
+    ESP_ERROR_CHECK(i2c_master_bus_add_device(i2c_master_bus, &bno055_conf, &bno055.config.slave_handle));
 
+    ESP_ERROR_CHECK(bno055_initialize(&bno055));
+    ESP_LOGI("MAIN", "BNO055 initialized");
+
+    ESP_ERROR_CHECK(bno055_configure(&bno055, NDOF_MODE, (ACC_MG | GY_RPS | EUL_DEG)));
+
+    /* imu calibration */
+    ESP_LOGI("BNO055", "Calibrating the sensor, please move the sensor");
+    while (1)
+    {
+        ESP_ERROR_CHECK(bno055_get_calibration_status(&bno055));
+        if (bno055.config.is_calibrated)
+            break;
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+    ESP_LOGI("BNO055", "Calibration done");
+    esp_log_level_set(BNO055_TAG, ESP_LOG_INFO);
+
+    /* flex sensor stuff */
+    flex_data_t flex_data = {0};
+    ESP_ERROR_CHECK(flex_init());
+
+    /* Configure the peripheral according to the LED type */
+    configure_led();
+
+    /* gesture model stuff */
     gesture_model_init();
 
     ESP_LOGI(TAG, "Starting in 3 seconds...");
@@ -73,7 +145,7 @@ void app_main(void)
     while (1) {
         ESP_LOGI(TAG, "Collecting gesture window...");
 
-        collect_gesture_window();
+        collect_gesture_window(&bno055);
 
         ESP_LOGI(TAG, "Classifying gesture...");
 
@@ -122,76 +194,36 @@ static void read_all_flex_sensors(
 }
 
 
-// ------------------------------------------------------
-// Read IMU
-//
-// Replace this function with your actual IMU driver.
-// For example, if you are using MPU6050, ICM20948, MPU9250,
-// etc., this is where you call that library.
-//
-// For now, this dummy version returns still-hand values.
-// ------------------------------------------------------
-
-static void read_imu(
-    float *gx,
-    float *gy,
-    float *gz,
-    float *ax,
-    float *ay,
-    float *az,
-    float *qx,
-    float *qy,
-    float *qz,
-    float *qw
-)
-{
-    // Dummy values.
-    // Replace these with real readings from your IMU driver.
-    // Expected IMU output order:
-    // g_x, g_y, g_z, a_x, a_y, a_z, x, y, z, w
-
-    *gx = 0.0f;
-    *gy = 0.0f;
-    *gz = 0.0f;
-
-    *ax = 0.0f;
-    *ay = 0.0f;
-    *az = 9.81f;
-
-    // Quaternion orientation. A stationary neutral orientation is usually identity: x=0, y=0, z=0, w=1.
-    *qx = 0.0f;
-    *qy = 0.0f;
-    *qz = 0.0f;
-    *qw = 1.0f;
-}
-
-
 // Collect one gesture window
 // 140 samples
 // 20 ms between samples
 // total duration = 1.5 seconds
 
-static void collect_gesture_window(void)
+static void collect_gesture_window(bno055_t* bno055)
 {
     for (int t = 0; t < NUM_TIMESTEPS; t++) {
         int thumb, index, middle, ring, pinky;
         float gx, gy, gz, ax, ay, az, qx, qy, qz, qw;
 
         read_all_flex_sensors(&thumb, &index, &middle, &ring, &pinky);
-        read_imu(&gx, &gy, &gz, &ax, &ay, &az, &qx, &qy, &qz, &qw);
 
-        gesture_window[t][0] = gx;
-        gesture_window[t][1] = gy;
-        gesture_window[t][2] = gz;
+        /* imu readings */
+        bno055_get_readings(bno055, GYROSCOPE);
+        bno055_get_readings(bno055, LINEAR_ACCELERATION);
+        bno055_get_readings(bno055, QUATERNION);
 
-        gesture_window[t][3] = ax;
-        gesture_window[t][4] = ay;
-        gesture_window[t][5] = az;
+        gesture_window[t][0] = bno055->gyroscope.x;
+        gesture_window[t][1] = bno055->gyroscope.y;
+        gesture_window[t][2] = bno055->gyroscope.z;
 
-        gesture_window[t][6] = qx;
-        gesture_window[t][7] = qy;
-        gesture_window[t][8] = qz;
-        gesture_window[t][9] = qw;
+        gesture_window[t][3] = bno055->linear_acceleration.x;
+        gesture_window[t][4] = bno055->linear_acceleration.y;
+        gesture_window[t][5] = bno055->linear_acceleration.z;
+
+        gesture_window[t][6] = bno055->quaternion.x;
+        gesture_window[t][7] = bno055->quaternion.y;
+        gesture_window[t][8] = bno055->quaternion.z;
+        gesture_window[t][9] = bno055->quaternion.w;
 
         gesture_window[t][10] = (float)pinky;
         gesture_window[t][11] = (float)ring;
@@ -256,4 +288,45 @@ static void run_gesture_classification(void)
 
     ESP_LOGI(TAG, "Predicted class index: %d", predicted_class);
     ESP_LOGI(TAG, "Predicted gesture: %s", gesture_name);
+}
+
+static void blink_led(void)
+{
+    /* If the addressable LED is enabled */
+    if (s_led_state) {
+        /* Set the LED pixel using RGB from 0 (0%) to 255 (100%) for each color */
+        led_strip_set_pixel(led_strip, 0, 16, 16, 16);
+        /* Refresh the strip to send data */
+        led_strip_refresh(led_strip);
+    } else {
+        /* Set all LED off to clear all pixels */
+        led_strip_clear(led_strip);
+    }
+}
+
+static void configure_led(void)
+{
+    ESP_LOGI(TAG, "Example configured to blink addressable LED!");
+    /* LED strip initialization with the GPIO and pixels number*/
+    led_strip_config_t strip_config = {
+        .strip_gpio_num = BLINK_GPIO,
+        .max_leds = 1, // at least one LED on board
+    };
+
+    // config for RMT
+    led_strip_rmt_config_t rmt_config = {
+        .resolution_hz = 10 * 1000 * 1000, // 10MHz
+        .flags.with_dma = false,
+    };
+    ESP_ERROR_CHECK(led_strip_new_rmt_device(&strip_config, &rmt_config, &led_strip));
+
+    // config for SPI
+    led_strip_spi_config_t spi_config = {
+        .spi_bus = SPI2_HOST,
+        .flags.with_dma = true,
+    };
+    ESP_ERROR_CHECK(led_strip_new_spi_device(&strip_config, &spi_config, &led_strip));
+
+    /* Set all LED off to clear all pixels */
+    led_strip_clear(led_strip);
 }
