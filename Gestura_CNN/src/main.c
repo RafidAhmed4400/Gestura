@@ -36,7 +36,7 @@ static const char *TAG = "GESTURE_APP";
 
 // NN Model settings
 #define NUM_TIMESTEPS 140
-#define NUM_FEATURES 15 // 5 flex sensors + 10 IMU features
+#define NUM_FEATURES 11 // 5 flex sensors + 10 IMU features
 
 #define SAMPLE_DELAY_MS 10   // 100 Hz sampling rate
 
@@ -178,16 +178,23 @@ static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data)
         gesture_window[t][4] = bno055->linear_acceleration.y;
         gesture_window[t][5] = bno055->linear_acceleration.z;
 
-        gesture_window[t][6] = bno055->quaternion.x;
-        gesture_window[t][7] = bno055->quaternion.y;
-        gesture_window[t][8] = bno055->quaternion.z;
-        gesture_window[t][9] = bno055->quaternion.w;
 
-        gesture_window[t][10] = (float)flex_data->fsr_pinky;
-        gesture_window[t][11] = (float)flex_data->fsr_ring;
-        gesture_window[t][12] = (float)flex_data->fsr_middle;
-        gesture_window[t][13] = (float)flex_data->fsr_index;
-        gesture_window[t][14] = (float)flex_data->fsr_thumb;
+        gesture_window[t][6] = (float)flex_data->fsr_pinky;
+        gesture_window[t][7] = (float)flex_data->fsr_ring;
+        gesture_window[t][8] = (float)flex_data->fsr_middle;
+        gesture_window[t][9] = (float)flex_data->fsr_index;
+        gesture_window[t][10] = (float)flex_data->fsr_thumb;
+
+        // gesture_window[t][6] = bno055->quaternion.x;
+        // gesture_window[t][7] = bno055->quaternion.y;
+        // gesture_window[t][8] = bno055->quaternion.z;
+        // gesture_window[t][9] = bno055->quaternion.w;
+
+        // gesture_window[t][10] = (float)flex_data->fsr_pinky;
+        // gesture_window[t][11] = (float)flex_data->fsr_ring;
+        // gesture_window[t][12] = (float)flex_data->fsr_middle;
+        // gesture_window[t][13] = (float)flex_data->fsr_index;
+        // gesture_window[t][14] = (float)flex_data->fsr_thumb;
 
         vTaskDelay(pdMS_TO_TICKS(SAMPLE_DELAY_MS));
     }

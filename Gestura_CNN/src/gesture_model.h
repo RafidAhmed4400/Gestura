@@ -6,7 +6,7 @@ extern "C" {
 #endif
 
 #define GM_NUM_TIMESTEPS 140
-#define GM_NUM_FEATURES 15
+#define GM_NUM_FEATURES 11
 
 // Change this to match the number of classes!!!! (Should be 27)!!
 #define GM_NUM_CLASSES 13
