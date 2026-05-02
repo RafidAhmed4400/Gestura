@@ -68,11 +68,7 @@ static const char *TAG = "GESTURE_APP";
 static float gesture_window[NUM_TIMESTEPS][NUM_FEATURES];
 
 // function prototypes
-static void adc_init(void);
-static int read_flex_adc(adc1_channel_t channel);
-static void read_all_flex_sensors(int *thumb, int *index, int *middle, int *ring, int *pinky);
-
-static void collect_gesture_window(bno055_t* bno055);
+static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data);
 static void print_gesture_window_csv(int gesture_id, const char *label);
 static void run_gesture_classification(void);
 
@@ -145,7 +141,7 @@ void app_main(void)
     while (1) {
         ESP_LOGI(TAG, "Collecting gesture window...");
 
-        collect_gesture_window(&bno055);
+        collect_gesture_window(&bno055, &flex_data);
 
         ESP_LOGI(TAG, "Classifying gesture...");
 
@@ -156,56 +152,18 @@ void app_main(void)
     }
 }
 
-// ADC setup
-
-static void adc_init(void)
-{
-    adc1_config_width(ADC_WIDTH_BIT_12);
-
-    adc1_config_channel_atten(FLEX_THUMB_CHANNEL, ADC_ATTEN_DB_11);
-    adc1_config_channel_atten(FLEX_INDEX_CHANNEL, ADC_ATTEN_DB_11);
-    adc1_config_channel_atten(FLEX_MIDDLE_CHANNEL, ADC_ATTEN_DB_11);
-    adc1_config_channel_atten(FLEX_RING_CHANNEL, ADC_ATTEN_DB_11);
-    adc1_config_channel_atten(FLEX_PINKY_CHANNEL, ADC_ATTEN_DB_11);
-
-    ESP_LOGI(TAG, "ADC initialized.");
-}
-
-// helper function to read a single flex sensor
-static int read_flex_adc(adc1_channel_t channel)
-{
-    return adc1_get_raw(channel);
-}
-
-// helper function to read all flex sensors
-static void read_all_flex_sensors(
-    int *thumb,
-    int *index,
-    int *middle,
-    int *ring,
-    int *pinky
-)
-{
-    *thumb = read_flex_adc(FLEX_THUMB_CHANNEL);
-    *index = read_flex_adc(FLEX_INDEX_CHANNEL);
-    *middle = read_flex_adc(FLEX_MIDDLE_CHANNEL);
-    *ring = read_flex_adc(FLEX_RING_CHANNEL);
-    *pinky = read_flex_adc(FLEX_PINKY_CHANNEL);
-}
-
-
 // Collect one gesture window
 // 140 samples
 // 20 ms between samples
 // total duration = 1.5 seconds
 
-static void collect_gesture_window(bno055_t* bno055)
+static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data)
 {
     for (int t = 0; t < NUM_TIMESTEPS; t++) {
         int thumb, index, middle, ring, pinky;
         float gx, gy, gz, ax, ay, az, qx, qy, qz, qw;
 
-        read_all_flex_sensors(&thumb, &index, &middle, &ring, &pinky);
+        flex_read_normalized(flex_data);
 
         /* imu readings */
         bno055_get_readings(bno055, GYROSCOPE);
@@ -225,11 +183,11 @@ static void collect_gesture_window(bno055_t* bno055)
         gesture_window[t][8] = bno055->quaternion.z;
         gesture_window[t][9] = bno055->quaternion.w;
 
-        gesture_window[t][10] = (float)pinky;
-        gesture_window[t][11] = (float)ring;
-        gesture_window[t][12] = (float)middle;
-        gesture_window[t][13] = (float)index;
-        gesture_window[t][14] = (float)thumb;
+        gesture_window[t][10] = (float)flex_data->fsr_pinky;
+        gesture_window[t][11] = (float)flex_data->fsr_ring;
+        gesture_window[t][12] = (float)flex_data->fsr_middle;
+        gesture_window[t][13] = (float)flex_data->fsr_index;
+        gesture_window[t][14] = (float)flex_data->fsr_thumb;
 
         vTaskDelay(pdMS_TO_TICKS(SAMPLE_DELAY_MS));
     }
