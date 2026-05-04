@@ -26,16 +26,16 @@ extern const char *FSR_TAG;
 #define FSR_ADC_CHANNEL_3 ADC1_CHANNEL_7   // GPIO5 pin8
 #define FSR_ADC_CHANNEL_4 ADC1_CHANNEL_2   // GPIO5 pin7
 
-#define FSR_PINKY_MAX 598
-#define FSR_PINKY_MIN 148
-#define FSR_RING_MAX 543
+#define FSR_PINKY_MAX 520
+#define FSR_PINKY_MIN 128
+#define FSR_RING_MAX 513
 #define FSR_RING_MIN 149
-#define FSR_MIDDLE_MAX 570
-#define FSR_MIDDLE_MIN 155
-#define FSR_INDEX_MAX 582
-#define FSR_INDEX_MIN 162
-#define FSR_THUMB_MAX 663
-#define FSR_THUMB_MIN 353
+#define FSR_MIDDLE_MAX 540
+#define FSR_MIDDLE_MIN 145
+#define FSR_INDEX_MAX 562
+#define FSR_INDEX_MIN 172
+#define FSR_THUMB_MAX 667
+#define FSR_THUMB_MIN 340
 
 typedef struct flex_data_t {
     int fsr_pinky;
