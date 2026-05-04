@@ -5,11 +5,11 @@
 extern "C" {
 #endif
 
-#define GM_NUM_TIMESTEPS 140
-#define GM_NUM_FEATURES 11
+#define GM_NUM_TIMESTEPS 110
+#define GM_NUM_FEATURES 14
 
 // Change this to match the number of classes!!!! (Should be 27)!!
-#define GM_NUM_CLASSES 13
+#define GM_NUM_CLASSES 26
 
 void gesture_model_init(void);
 

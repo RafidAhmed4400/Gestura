@@ -35,8 +35,8 @@ static const char *TAG = "GESTURE_APP";
 #define BLINK_GPIO 38
 
 // NN Model settings
-#define NUM_TIMESTEPS 140
-#define NUM_FEATURES 11 // 5 flex sensors + 10 IMU features
+#define NUM_TIMESTEPS 110
+#define NUM_FEATURES 14 // 5 flex sensors + 9 IMU features
 
 #define SAMPLE_DELAY_MS 10   // 100 Hz sampling rate
 
@@ -48,7 +48,7 @@ static const char *TAG = "GESTURE_APP";
 #define FLEX_PINKY_CHANNEL   ADC1_CHANNEL_2
 
 // Gesture buffer
-// Shape: 140 timesteps x 15 sensor features
+// Shape: 110 timesteps x 14 sensor features
 // Feature order:
 // 0 thumb
 // 1 index
@@ -61,10 +61,9 @@ static const char *TAG = "GESTURE_APP";
 // 8 ax
 // 9 ay
 // 10 az
-// 11 qx 
-// 12 qy 
-// 13 qz 
-// 14 qw 
+// 11 grav_x
+// 12 grav_y
+// 13 grav_z
 static float gesture_window[NUM_TIMESTEPS][NUM_FEATURES];
 
 // function prototypes
@@ -153,22 +152,18 @@ void app_main(void)
 }
 
 // Collect one gesture window
-// 140 samples
-// 20 ms between samples
-// total duration = 1.5 seconds
+// 110 samples
 
 static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data)
 {
     for (int t = 0; t < NUM_TIMESTEPS; t++) {
-        int thumb, index, middle, ring, pinky;
-        float gx, gy, gz, ax, ay, az, qx, qy, qz, qw;
 
         flex_read_normalized(flex_data);
 
         /* imu readings */
         bno055_get_readings(bno055, GYROSCOPE);
         bno055_get_readings(bno055, LINEAR_ACCELERATION);
-        bno055_get_readings(bno055, QUATERNION);
+        bno055_get_readings(bno055, GRAVITY);
 
         gesture_window[t][0] = bno055->gyroscope.x;
         gesture_window[t][1] = bno055->gyroscope.y;
@@ -178,23 +173,18 @@ static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data)
         gesture_window[t][4] = bno055->linear_acceleration.y;
         gesture_window[t][5] = bno055->linear_acceleration.z;
 
+        
+        gesture_window[t][6] = bno055->gravity.x;
+        gesture_window[t][7] = bno055->gravity.y;
+        gesture_window[t][8] = bno055->gravity.z;
+            
+        gesture_window[t][9] = (float)flex_data->fsr_pinky;
+        gesture_window[t][10] = (float)flex_data->fsr_ring;
+        gesture_window[t][11] = (float)flex_data->fsr_middle;
+        gesture_window[t][12] = (float)flex_data->fsr_index;
+        gesture_window[t][13] = (float)flex_data->fsr_thumb;
 
-        gesture_window[t][6] = (float)flex_data->fsr_pinky;
-        gesture_window[t][7] = (float)flex_data->fsr_ring;
-        gesture_window[t][8] = (float)flex_data->fsr_middle;
-        gesture_window[t][9] = (float)flex_data->fsr_index;
-        gesture_window[t][10] = (float)flex_data->fsr_thumb;
 
-        // gesture_window[t][6] = bno055->quaternion.x;
-        // gesture_window[t][7] = bno055->quaternion.y;
-        // gesture_window[t][8] = bno055->quaternion.z;
-        // gesture_window[t][9] = bno055->quaternion.w;
-
-        // gesture_window[t][10] = (float)flex_data->fsr_pinky;
-        // gesture_window[t][11] = (float)flex_data->fsr_ring;
-        // gesture_window[t][12] = (float)flex_data->fsr_middle;
-        // gesture_window[t][13] = (float)flex_data->fsr_index;
-        // gesture_window[t][14] = (float)flex_data->fsr_thumb;
 
         vTaskDelay(pdMS_TO_TICKS(SAMPLE_DELAY_MS));
     }
@@ -218,7 +208,7 @@ static void print_gesture_window_csv(int gesture_id, const char *label)
         int timestamp_ms = t * SAMPLE_DELAY_MS;
 
         printf(
-            "%d,%s,%d,%d,%.0f,%.0f,%.0f,%.0f,%.0f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n",
+            "%d,%s,%d,%d,%.0f,%.0f,%.0f,%.0f,%.0f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f,%.3f\n",
             gesture_id,
             label,
             t,
@@ -236,8 +226,7 @@ static void print_gesture_window_csv(int gesture_id, const char *label)
             gesture_window[t][10],
             gesture_window[t][11],
             gesture_window[t][12],
-            gesture_window[t][13],
-            gesture_window[t][14]
+            gesture_window[t][13]
         );
     }
 }
