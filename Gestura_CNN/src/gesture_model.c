@@ -1,4 +1,4 @@
-// Input: 140 x 15
+// Input: 110 x 14
 
 // Conv1D layer 1:
 //   filters = 8
@@ -34,10 +34,7 @@
 
 static const char *TAG = "GESTURE_MODEL";
 
-// ------------------------------------------------------
-// Model dimensions
-// ------------------------------------------------------
-
+// Model Dimensions 
 #define CONV1_FILTERS 8
 #define CONV1_KERNEL 5
 
@@ -49,22 +46,21 @@ static const char *TAG = "GESTURE_MODEL";
 
 #define DENSE1_UNITS 16
 
-// ------------------------------------------------------
 // Class names
-//
-// Replace these with your actual gesture names.
-// If you have 27 classes, update GM_NUM_CLASSES in gesture_model.h
-// and add all names here.
-// ------------------------------------------------------
+// Scaler mean
+// Scaler std
+// conv 1 weights and bias
+// conv 2 weights and bias
+// dense 1 weights and bias
+// output weights and bias
 
 // copy and paste all of these directly from the Python model
-// Auto-generated from trained Keras model.
-// Copy these arrays into gesture_model.c, replacing the placeholder arrays.
+// Auto-generated from trained Keras model, from the gesture_model_arrays_generated.c file 
 
 // Make sure these macros in gesture_model.h / gesture_model.c match:
-// GM_NUM_TIMESTEPS = 140
-// GM_NUM_FEATURES = 15
-// GM_NUM_CLASSES = 13
+// GM_NUM_TIMESTEPS = 110
+// GM_NUM_FEATURES = 14
+// GM_NUM_CLASSES = 26
 
 
 static const char *class_names[GM_NUM_CLASSES] = {
@@ -399,11 +395,7 @@ static const float output_b[GM_NUM_CLASSES] = {
 };
 
 
-
-// ------------------------------------------------------
-// Internal buffers
-// ------------------------------------------------------
-
+// Internal Buffers
 static float x_scaled[GM_NUM_TIMESTEPS][GM_NUM_FEATURES];
 
 static float conv1_out[GM_NUM_TIMESTEPS][CONV1_FILTERS];
@@ -421,10 +413,7 @@ static float logits[GM_NUM_CLASSES];
 static float probs[GM_NUM_CLASSES];
 
 
-// ------------------------------------------------------
-// Utility functions
-// ------------------------------------------------------
-
+// Utility functions 
 static float relu(float x)
 {
     return x > 0.0f ? x : 0.0f;
@@ -474,14 +463,9 @@ static int argmax(const float *array, int length)
 }
 
 
-// ------------------------------------------------------
-// Normalize input
-//
-// Same idea as Python StandardScaler:
-//
-// x_scaled = (x - mean) / std
-// ------------------------------------------------------
 
+// Normalize input
+// x_scaled = (x - mean) / std
 static void normalize_input(float input[GM_NUM_TIMESTEPS][GM_NUM_FEATURES])
 {
     for (int t = 0; t < GM_NUM_TIMESTEPS; t++) {
@@ -497,13 +481,10 @@ static void normalize_input(float input[GM_NUM_TIMESTEPS][GM_NUM_FEATURES])
     }
 }
 
-
-// ------------------------------------------------------
 // Conv1D layer 1
-//
 // padding = same
 // activation = ReLU
-// ------------------------------------------------------
+
 
 static void conv1d_layer1(void)
 {
@@ -531,11 +512,8 @@ static void conv1d_layer1(void)
 }
 
 
-// ------------------------------------------------------
 // MaxPool1D layer
-//
 // pool size = 2
-// ------------------------------------------------------
 
 static void maxpool1d_layer1(void)
 {
@@ -556,18 +534,13 @@ static void maxpool1d_layer1(void)
 }
 
 
-// ------------------------------------------------------
 // Conv1D layer 2
-//
 // input shape:
-//   POOL1_TIMESTEPS x CONV1_FILTERS
-//
+// POOL1_TIMESTEPS x CONV1_FILTERS
 // output shape:
-//   POOL1_TIMESTEPS x CONV2_FILTERS
-//
+// POOL1_TIMESTEPS x CONV2_FILTERS
 // padding = same
 // activation = ReLU
-// ------------------------------------------------------
 
 static void conv1d_layer2(void)
 {
@@ -594,16 +567,9 @@ static void conv1d_layer2(void)
     }
 }
 
-
-// ------------------------------------------------------
 // Global Average Pooling
-//
-// Converts:
-//   POOL1_TIMESTEPS x CONV2_FILTERS
-//
-// Into:
-//   CONV2_FILTERS
-// ------------------------------------------------------
+// Convert POOL1_TIMESTEPS x CONV2_FILTERS
+// Into CONV2_FILTERS
 
 static void global_average_pooling(void)
 {
@@ -618,12 +584,8 @@ static void global_average_pooling(void)
     }
 }
 
-
-// ------------------------------------------------------
 // Dense layer 1
-//
 // activation = ReLU
-// ------------------------------------------------------
 
 static void dense_layer1(void)
 {
@@ -638,12 +600,8 @@ static void dense_layer1(void)
     }
 }
 
-
-// ------------------------------------------------------
 // Output layer
-//
 // activation = softmax
-// ------------------------------------------------------
 
 static void output_layer(void)
 {
@@ -661,9 +619,7 @@ static void output_layer(void)
 }
 
 
-// ------------------------------------------------------
 // Public functions
-// ------------------------------------------------------
 
 void gesture_model_init(void)
 {
@@ -709,107 +665,3 @@ const char *gesture_model_get_class_name(int class_index)
 
     return class_names[class_index];
 }
-
-// static const char *class_names[GM_NUM_CLASSES] = {
-//     // Fully trained class model
-//     // "A","B","C","D","E",
-//     // "F","G","H","I","J",
-//     // "K","L","M","N","O",
-//     // "P","Q","R","S","T",
-//     // "U","V","W","X","Y",
-//     // "Z", "NO_GESTURE"
-
-//     // Test class model 
-//     "A","B","C","D","E",
-//     "F","G","H","I","K",
-//     "L","M","N"
-
-// };
-
-
-// // Scaler parameters
-// // These must match your Python StandardScaler.
-// //
-// // In Python, after training:
-// //
-// // print(scaler.mean_)
-// // print(scaler.scale_)
-// //
-// // Then paste those values here.
-// //
-// // Feature order:
-// // gx, gy, gz, ax, ay, az, qx, qy, qz, qw, pinky, ring, middle, index, thumb
-
-
-// static const float scaler_mean[15] = {
-//     gx_mean, gy_mean, gz_mean,
-//     ax_mean, ay_mean, az_mean,
-//     qx_mean, qy_mean, qz_mean, qw_mean,
-//     pinky_mean, ring_mean, middle_mean, index_mean, thumb_mean
-// };
-
-// static const float scaler_std[15] = {
-//     gx_std, gy_std, gz_std,
-//     ax_std, ay_std, az_std,
-//     qx_std, qy_std, qz_std, qw_std,
-//     pinky_std, ring_std, middle_std, index_std, thumb_std
-// };
-
-// // ------------------------------------------------------
-// // CNN weights
-// //
-// // IMPORTANT:
-// // These are placeholder values.
-// // The code structure is correct, but these weights are not trained.
-// //
-// // After training in Python, export your model weights and paste them here.
-// // ------------------------------------------------------
-
-// // Conv1 weights shape:
-// // [CONV1_FILTERS][CONV1_KERNEL][GM_NUM_FEATURES]
-// static const float conv1_w[CONV1_FILTERS][CONV1_KERNEL][GM_NUM_FEATURES] = {
-//     {{{0}}}
-// };
-
-// // Conv1 bias shape:
-// // [CONV1_FILTERS]
-// static const float conv1_b[CONV1_FILTERS] = {
-//     0
-// };
-
-// // Conv2 weights shape:
-// // [CONV2_FILTERS][CONV2_KERNEL][CONV1_FILTERS]
-// static const float conv2_w[CONV2_FILTERS][CONV2_KERNEL][CONV1_FILTERS] = {
-//     {{{0}}}
-// };
-
-// // Conv2 bias shape:
-// // [CONV2_FILTERS]
-// static const float conv2_b[CONV2_FILTERS] = {
-//     0
-// };
-
-// // Dense1 weights shape:
-// // [DENSE1_UNITS][CONV2_FILTERS]
-// static const float dense1_w[DENSE1_UNITS][CONV2_FILTERS] = {
-//     {0}
-// };
-
-// // Dense1 bias shape:
-// // [DENSE1_UNITS]
-// static const float dense1_b[DENSE1_UNITS] = {
-//     0
-// };
-
-// // Output weights shape:
-// // [GM_NUM_CLASSES][DENSE1_UNITS]
-// static const float output_w[GM_NUM_CLASSES][DENSE1_UNITS] = {
-//     {0}
-// };
-
-// // Output bias shape:
-// // [GM_NUM_CLASSES]
-// static const float output_b[GM_NUM_CLASSES] = {
-//     0
-// };
-

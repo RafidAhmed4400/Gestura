@@ -4,24 +4,33 @@
 
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/gpio.h"
+
 
 #include "esp_log.h"
 #include "esp_timer.h"
+#include "esp_err.h"
 #include "led_strip.h"
 #include "sdkconfig.h"
 
+#include "driver/gpio.h"
 #include "driver/adc.h"
+#include "driver/i2s_std.h"
 
 #include "gesture_model.h"
 #include "bno055.h"
 #include "flex_sensor.h"
+#include "lookup_table.h"
+
+#include "speech.h"   // all audio lives here
 
 static uint8_t s_led_state = 0;
 
 static led_strip_handle_t led_strip;
 
+static i2s_chan_handle_t tx_handle = NULL;
+
 static const char *TAG = "GESTURE_APP";
+
 
 // IMU BNO055 chip settings
 #define CONFIG_BNO055_SCL_PIN 9
@@ -47,32 +56,42 @@ static const char *TAG = "GESTURE_APP";
 #define FLEX_RING_CHANNEL    ADC1_CHANNEL_7
 #define FLEX_PINKY_CHANNEL   ADC1_CHANNEL_2
 
+// I2S pin assignments
+#define I2S_BCLK_GPIO   4
+#define I2S_WS_GPIO     5
+#define I2S_DOUT_GPIO   6
+#define SAMPLE_RATE     48000
+#define DMA_DESC_NUM    4
+#define DMA_FRAME_NUM   128
+
 // Gesture buffer
 // Shape: 110 timesteps x 14 sensor features
 // Feature order:
-// 0 thumb
-// 1 index
-// 2 middle
-// 3 ring
-// 4 pinky
-// 5 gx
-// 6 gy
-// 7 gz
-// 8 ax
-// 9 ay
-// 10 az
-// 11 grav_x
-// 12 grav_y
-// 13 grav_z
+// 0 gx
+// 1 gy
+// 2 gz
+// 3 ax
+// 4 ay
+// 5 az
+// 6 grav_x
+// 7 grav_y
+// 8 grav_z
+// 9 pinky 
+// 10 ring
+// 11 middle
+// 12 index
+// 13 thumb
 static float gesture_window[NUM_TIMESTEPS][NUM_FEATURES];
 
 // function prototypes
 static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data);
 static void print_gesture_window_csv(int gesture_id, const char *label);
-static void run_gesture_classification(void);
+static int run_gesture_classification(void);
 
 static void blink_led(void);
 static void configure_led(void);
+
+static esp_err_t audio_i2s_init(void);
 
 // Main app
 void app_main(void)
@@ -144,8 +163,8 @@ void app_main(void)
 
         ESP_LOGI(TAG, "Classifying gesture...");
 
-        run_gesture_classification();
-
+        const int pred_class = run_gesture_classification();
+        speech_play(letters[pred_class]);
         ESP_LOGI(TAG, "Waiting before next classification...");
         vTaskDelay(pdMS_TO_TICKS(1000));
     }
@@ -177,7 +196,7 @@ static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data)
         gesture_window[t][6] = bno055->gravity.x;
         gesture_window[t][7] = bno055->gravity.y;
         gesture_window[t][8] = bno055->gravity.z;
-            
+
         gesture_window[t][9] = (float)flex_data->fsr_pinky;
         gesture_window[t][10] = (float)flex_data->fsr_ring;
         gesture_window[t][11] = (float)flex_data->fsr_middle;
@@ -190,17 +209,9 @@ static void collect_gesture_window(bno055_t* bno055, flex_data_t* flex_data)
     }
 }
 
-
-// ------------------------------------------------------
-// Optional: print the gesture window as CSV
-//
+// print the gesture window as CSV
 // Use this when collecting training data.
-// Example:
-//
-// gesture_id,label,timestep,timestamp_ms,thumb,index,middle,ring,pinky,gx,gy,gz,ax,ay,az,qx,qy,qz,qw
-//
 // You can copy the serial output into a CSV file.
-// ------------------------------------------------------
 
 static void print_gesture_window_csv(int gesture_id, const char *label)
 {
@@ -234,7 +245,7 @@ static void print_gesture_window_csv(int gesture_id, const char *label)
 
 // Helper function to run gesture classification
 
-static void run_gesture_classification(void)
+static int run_gesture_classification(void)
 {
     int predicted_class = gesture_model_predict(gesture_window);
 
@@ -242,6 +253,7 @@ static void run_gesture_classification(void)
 
     ESP_LOGI(TAG, "Predicted class index: %d", predicted_class);
     ESP_LOGI(TAG, "Predicted gesture: %s", gesture_name);
+    return predicted_class;
 }
 
 static void blink_led(void)
@@ -283,4 +295,29 @@ static void configure_led(void)
 
     /* Set all LED off to clear all pixels */
     led_strip_clear(led_strip);
+}
+
+// Initialize the I2S audio interface
+static esp_err_t audio_i2s_init(void)
+{
+    i2s_chan_config_t chan_cfg = I2S_CHANNEL_DEFAULT_CONFIG(I2S_NUM_0, I2S_ROLE_MASTER);
+    chan_cfg.dma_desc_num  = DMA_DESC_NUM;
+    chan_cfg.dma_frame_num = DMA_FRAME_NUM;
+    ESP_ERROR_CHECK(i2s_new_channel(&chan_cfg, &tx_handle, NULL));
+
+    i2s_std_config_t std_cfg = {
+        .clk_cfg  = I2S_STD_CLK_DEFAULT_CONFIG(SAMPLE_RATE),
+        .slot_cfg = I2S_STD_MSB_SLOT_DEFAULT_CONFIG(I2S_DATA_BIT_WIDTH_16BIT, I2S_SLOT_MODE_STEREO),
+        .gpio_cfg = {
+            .mclk = I2S_GPIO_UNUSED,
+            .bclk = I2S_BCLK_GPIO,
+            .ws   = I2S_WS_GPIO,
+            .dout = I2S_DOUT_GPIO,
+            .din  = I2S_GPIO_UNUSED,
+            .invert_flags = { .mclk_inv = false, .bclk_inv = false, .ws_inv = false },
+        },
+    };
+    ESP_ERROR_CHECK(i2s_channel_init_std_mode(tx_handle, &std_cfg));
+    ESP_ERROR_CHECK(i2s_channel_enable(tx_handle));
+    return ESP_OK;
 }
