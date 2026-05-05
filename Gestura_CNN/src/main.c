@@ -150,6 +150,10 @@ void app_main(void)
     /* Configure the peripheral according to the LED type */
     configure_led();
 
+    /* configure speech */
+    ESP_ERROR_CHECK(audio_i2s_init());
+    speech_init(&tx_handle);
+
     /* gesture model stuff */
     gesture_model_init();
 
