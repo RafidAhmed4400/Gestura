@@ -1,16 +1,6 @@
 #pragma once
-// =============================================================================
-// speech.h — Gestura speech playback API
-// =============================================================================
-// Include this wherever you need to play audio. Then call:
-//
-//   speech_play("letter_a");
-//   speech_play("i_love_you");
-//   speech_play_vol("fuck_you", 0.20f);
-//
-// To add new words/phrases: edit generate_audio.sh and re-run it.
-// No changes needed in this file or main.c.
-// =============================================================================
+// To add new words/phrases, edit generate_audio.sh and re-run it.
+
 
 #include <stdint.h>
 #include <stddef.h>
@@ -27,14 +17,14 @@
 
 #define SPEECH_CHUNK_FRAMES  256
 
-// ── Internal: I2S handle must be set before calling speech_play ──────────────
+// Set I2S handle
 static i2s_chan_handle_t *_speech_i2s_handle = (void*)0;
 
 static inline void speech_init(i2s_chan_handle_t *handle) {
     _speech_i2s_handle = handle;
 }
 
-// ── Play raw samples at a given volume ───────────────────────────────────────
+// Play raw samples at a given volume 
 static inline void speech_play_raw(const int16_t *samples, size_t len, float vol) {
     if (!_speech_i2s_handle) {
         printf("[speech] ERROR: call speech_init() first\n");
@@ -58,7 +48,7 @@ static inline void speech_play_raw(const int16_t *samples, size_t len, float vol
     }
 }
 
-// ── Play a clip by name at custom volume ─────────────────────────────────────
+// Play a clip by name at custom volume 
 static inline void speech_play_vol(const char *name, float vol) {
     const SpeechClip *clip = speech_find(name);
     if (!clip) {
@@ -69,12 +59,12 @@ static inline void speech_play_vol(const char *name, float vol) {
     speech_play_raw(clip->samples, clip->len, vol);
 }
 
-// ── Play a clip by name at default volume ────────────────────────────────────
+// Play a clip by name at default volume 
 static inline void speech_play(const char *name) {
     speech_play_vol(name, SPEECH_VOLUME);
 }
 
-// ── Check if a clip exists ───────────────────────────────────────────────────
+// Check if a clip exists 
 static inline int speech_exists(const char *name) {
     return speech_find(name) != (void*)0;
 }

@@ -6,7 +6,7 @@
 #include "esp_err.h"
 #include "speech.h"   // ← all audio lives here
 
-// ── I2S pin assignments ──────────────────────────────────────────────────────
+//I2S pin assignments
 #define I2S_BCLK_GPIO   4
 #define I2S_WS_GPIO     5
 #define I2S_DOUT_GPIO   6
@@ -40,7 +40,7 @@ static esp_err_t audio_i2s_init(void)
     return ESP_OK;
 }
 
-// ── Main ─────────────────────────────────────────────────────────────────────
+// Main function
 void app_main(void)
 {
     ESP_ERROR_CHECK(audio_i2s_init());
@@ -48,7 +48,7 @@ void app_main(void)
     printf("Gestura SA_tb ready — %d clips loaded\n\n", SPEECH_CLIP_COUNT);
 
     while (1) {
-        // ── Alphabet ────────────────────────────────────────────────────────
+        // Alphabet
         const char *letters[] = {
             "letter_a","letter_b","letter_c","letter_d","letter_e","letter_f",
             "letter_g","letter_h","letter_i","letter_j","letter_k","letter_l",
@@ -63,7 +63,7 @@ void app_main(void)
 
         vTaskDelay(pdMS_TO_TICKS(1000));
 
-        // ── Phrases ─────────────────────────────────────────────────────────
+        // Phrases
         speech_play("i_love_you");
         vTaskDelay(pdMS_TO_TICKS(1500));
 

@@ -7,11 +7,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import classification_report, confusion_matrix
 
-
-# ============================================================
-# USER SETTINGS
-# ============================================================
-
+# User settings, datapath, and model parameters
 DATA_ROOT = Path(r"C:\Users\thero\Gestura_project\Data_Processing\split_data")
 
 TIMESTEPS = 140
@@ -25,53 +21,32 @@ RANDOM_STATE = 42
 MODEL_SAVE_PATH = "gesture_cnn_model.keras"
 
 
-# ============================================================
-# EXPECTED FEATURE ORDER
-# ============================================================
-# Your original files have useless first and last columns:
-#   first column:  Blank
-#   last column:   index_1
-#
-# After removing those, the remaining 15 columns should be:
-#
+
+# Keep 14 columns of the data in the CSV file.
 # g_x, g_y, g_z,
 # a_x, a_y, a_z,
-# x, y, z, w,
+# grav_x, grav_y, grav_z,
 # pinky, ring, middle, index, thumb
-#
 # This must match the ESP32 C buffer order exactly.
 
 EXPECTED_FEATURE_COLUMNS = [
     "g_x", "g_y", "g_z",
     "a_x", "a_y", "a_z",
-    # "x", "y", "z", "w",
+    "grav_x", "grav_y", "grav_z",
     "pinky", "ring", "middle", "index", "thumb"
 ]
 
 
-# ============================================================
-# LOAD ONE CSV FILE
-# ============================================================
-
+# Load 1 CSV file
 def load_one_csv(csv_path: Path):
-    """
-    Loads one gesture CSV file.
 
-    Label is taken from the parent folder name.
-    Example:
-        split_data/A/A_1_window_01.csv
-        label = A
-
-    The first and last columns are dropped.
-    The remaining data should be 140 rows x 15 features.
-    """
-
+    # Loads one gesture CSV file. The remaining data should be 110 rows x 14 features.
     df = pd.read_csv(csv_path)
 
     FEATURE_COLS = [
         "g_x", "g_y", "g_z",
         "a_x", "a_y", "a_z",
-        # "x", "y", "z", "w",
+        "grav_x", "grav_y", "grav_z",
         "pinky", "ring", "middle", "index", "thumb"
     ]
     df.columns = df.columns.str.strip()
@@ -81,12 +56,7 @@ def load_one_csv(csv_path: Path):
         raise ValueError(
             f"{csv_path} has {df.shape[0]} rows, expected {TIMESTEPS}."
         )
-
-    # if df.shape[1] != NUM_FEATURES:
-    #     raise ValueError(
-    #         f"{csv_path} has {df.shape[1]} features after dropping first/last columns, "
-    #         f"expected {NUM_FEATURES}."
-    #     )
+    
     if df.isna().any().any():
         print("\nNaN problem in file:")
         print(csv_path)
@@ -99,10 +69,8 @@ def load_one_csv(csv_path: Path):
 
         raise ValueError("Stopping because this file contains NaN values.")
 
-    # Optional safety check:
-    # This checks if column names match what we expect.
+    # Safety check to ensure the column order is correct.
     actual_columns = list(df.columns)
-
     if actual_columns != EXPECTED_FEATURE_COLUMNS:
         print(f"\nWARNING: Column order mismatch in {csv_path}")
         print("Expected:")
@@ -120,10 +88,7 @@ def load_one_csv(csv_path: Path):
     return x, label
 
 
-# ============================================================
-# LOAD ALL CSV FILES
-# ============================================================
-
+# Load the entire dataset
 def load_dataset(data_root: Path):
     """
     Recursively finds all CSV files inside DATA_ROOT.
@@ -160,24 +125,11 @@ def load_dataset(data_root: Path):
     return X, y
 
 
-# ============================================================
-# NORMALIZE DATA
-# ============================================================
-
+# Normalize the data
 def normalize_data(X_train, X_test):
     """
     Computes mean and std from training data only.
-
     The mean/std are calculated per feature across all samples and timesteps.
-
-    X_train shape:
-        num_examples x 140 x 15
-
-    scaler_mean shape:
-        15
-
-    scaler_std shape:
-        15
     """
 
     scaler_mean = X_train.mean(axis=(0, 1))
@@ -192,23 +144,11 @@ def normalize_data(X_train, X_test):
     return X_train_norm, X_test_norm, scaler_mean, scaler_std
 
 
-# ============================================================
-# BUILD CNN MODEL
-# ============================================================
+# Build the CNN model
 
 def build_model(num_classes):
-    """
-    This architecture is designed to match the C inference file.
 
-    C model equivalent:
-        Input: 140 x 15
-        Conv1D: 8 filters, kernel 5, same padding, ReLU
-        MaxPool1D: pool size 2
-        Conv1D: 16 filters, kernel 3, same padding, ReLU
-        GlobalAveragePooling1D
-        Dense: 16, ReLU
-        Dense: num_classes, Softmax
-    """
+    # This architecture is designed to match the C inference file.
 
     model = tf.keras.Sequential([
         tf.keras.layers.Input(shape=(TIMESTEPS, NUM_FEATURES)),
@@ -260,9 +200,7 @@ def build_model(num_classes):
     return model
 
 
-# ============================================================
-# EXPORT SCALER VALUES FOR C
-# ============================================================
+# Export scala values for C
 
 def print_c_array(name, values):
     """
@@ -277,24 +215,14 @@ def print_c_array(name, values):
 
     print("};")
 
-
-# ============================================================
-# MAIN
-# ============================================================
-
+# Main function
 def main():
-    # ----------------------------
+
     # Load dataset
-    # ----------------------------
     X, y_text = load_dataset(DATA_ROOT)
 
-    # ----------------------------
+
     # Encode labels
-    # Example:
-    # A -> 0
-    # B -> 1
-    # C -> 2
-    # ----------------------------
     label_encoder = LabelEncoder()
     y = label_encoder.fit_transform(y_text)
 
@@ -307,9 +235,8 @@ def main():
 
     print(f"\nNumber of classes: {num_classes}")
 
-    # ----------------------------
+
     # Train/test split
-    # ----------------------------
     X_train, X_test, y_train, y_test = train_test_split(
         X,
         y,
@@ -318,9 +245,8 @@ def main():
         stratify=y
     )
 
-    # ----------------------------
+
     # Normalize
-    # ----------------------------
     X_train_norm, X_test_norm, scaler_mean, scaler_std = normalize_data(
         X_train,
         X_test
@@ -330,15 +256,13 @@ def main():
     print_c_array("scaler_mean", scaler_mean)
     print_c_array("scaler_std", scaler_std)
 
-    # ----------------------------
+
     # Build model
-    # ----------------------------
     model = build_model(num_classes)
     model.summary()
 
-    # ----------------------------
+
     # Train model
-    # ----------------------------
     history = model.fit(
         X_train_norm,
         y_train,
@@ -348,18 +272,16 @@ def main():
         verbose=1
     )
 
-    # ----------------------------
+
     # Evaluate
-    # ----------------------------
     test_loss, test_acc = model.evaluate(X_test_norm, y_test, verbose=0)
 
     print("\nFinal test results:")
     print(f"Loss: {test_loss:.4f}")
     print(f"Accuracy: {test_acc:.4f}")
 
-    # ----------------------------
+
     # Predictions
-    # ----------------------------
     y_pred_probs = model.predict(X_test_norm)
     y_pred = np.argmax(y_pred_probs, axis=1)
 
@@ -373,24 +295,21 @@ def main():
     print("\nConfusion matrix:")
     print(confusion_matrix(y_test, y_pred))
 
-    # ----------------------------
+
     # Save model
-    # ----------------------------
     model.save(MODEL_SAVE_PATH)
     print(f"\nSaved trained model to: {MODEL_SAVE_PATH}")
 
-    # ----------------------------
+
     # Save class names
-    # ----------------------------
     with open("class_names.txt", "w") as f:
         for idx, name in enumerate(class_names):
             f.write(f"{idx},{name}\n")
 
     print("Saved class names to: class_names.txt")
 
-    # ----------------------------
+
     # Save scaler values
-    # ----------------------------
     np.save("scaler_mean.npy", scaler_mean)
     np.save("scaler_std.npy", scaler_std)
 

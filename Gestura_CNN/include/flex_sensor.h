@@ -11,7 +11,6 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 
-#define ESP_LOG_TIMESTAMP_DISABLED 1
 #include "esp_log.h"
 #include "esp_err.h"  
 #include "driver/adc.h" // ADC

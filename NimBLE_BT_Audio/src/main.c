@@ -18,7 +18,6 @@
 #include "services/gap/ble_svc_gap.h"
 #include "services/gatt/ble_svc_gatt.h"
 
-static const char *TAG = "BLE_MONITOR";
 
 // Define a custom service and characteristic UUIDs in little endian format
 static const ble_uuid128_t service_uuid =

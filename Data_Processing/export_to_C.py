@@ -2,10 +2,9 @@ import numpy as np
 import tensorflow as tf
 
 
-# ============================================================
-# USER SETTINGS
-# ============================================================
 
+
+# Input python CNN values
 MODEL_PATH = "gesture_cnn_model.keras"
 SCALER_MEAN_PATH = "scaler_mean.npy"
 SCALER_STD_PATH = "scaler_std.npy"
@@ -14,10 +13,7 @@ CLASS_NAMES_PATH = "class_names.txt"
 OUTPUT_C_FILE = "gesture_model_arrays_generated.c"
 
 
-# ============================================================
-# FORMAT HELPERS
-# ============================================================
-
+# Format helper functions
 def format_float(x):
     return f"{x:.8f}f"
 
@@ -92,10 +88,7 @@ def write_class_names(f, class_names):
     f.write("};\n\n")
 
 
-# ============================================================
-# MAIN EXPORT
-# ============================================================
-
+# Main export function
 def main():
     model = tf.keras.models.load_model(MODEL_PATH)
 
@@ -114,23 +107,13 @@ def main():
     dense1_w, dense1_b = dense1.get_weights()
     output_w, output_b = output.get_weights()
 
-    # ------------------------------------------------------------
-    # Keras Conv1D shape:
-    #     [kernel_size][input_channels][filters]
-    #
-    # C expected shape:
-    #     [filters][kernel_size][input_channels]
-    # ------------------------------------------------------------
+
+    # C expected shape: [filters][kernel_size][input_channels]
+
     conv1_w_c = np.transpose(conv1_w, (2, 0, 1))
     conv2_w_c = np.transpose(conv2_w, (2, 0, 1))
 
-    # ------------------------------------------------------------
-    # Keras Dense shape:
-    #     [input_units][output_units]
-    #
-    # C expected shape:
-    #     [output_units][input_units]
-    # ------------------------------------------------------------
+    # C expected shape: [output_units][input_units]
     dense1_w_c = dense1_w.T
     output_w_c = output_w.T
 
