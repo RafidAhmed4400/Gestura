@@ -1,0 +1,459 @@
+Protel Design System Design Rule Check
+PCB File : C:\Users\Alex\Documents\Repos\Gestura\PCB\Gestura_Glove_PCB\GesturaPCBLayout.PcbDoc
+Date     : 7/30/2026
+Time     : 5:37:25 PM
+
+Processing Rule : Clearance Constraint (Gap=0.127mm) (All),(All)
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J10-MP1(121.31mm,98.119mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J10-MP2(121.31mm,103.069mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J11-MP1(121.31mm,106.227mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J11-MP2(121.31mm,111.177mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J14-MP1(120.991mm,88.09mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J14-MP2(120.991mm,94.79mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J1-MP1(75.413mm,111.05mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J1-MP2(75.413mm,106.1mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J2-MP1(75.413mm,102.942mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J2-MP2(75.413mm,97.992mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J4-MP1(88.516mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J4-MP2(83.566mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J5-MP1(80.443mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J5-MP2(75.493mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J6-MP1(104.827mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J6-MP2(99.877mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J7-MP1(96.644mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J7-MP2(91.694mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J8-MP1(121.083mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J8-MP2(116.133mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J9-MP1(112.955mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.127mm) Between Pad J9-MP2(108.005mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer 
+Rule Violations :22
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad J10-MP1(121.31mm,98.119mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J10-MP2(121.31mm,103.069mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J11-MP1(121.31mm,106.227mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J11-MP2(121.31mm,111.177mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J14-MP1(120.991mm,88.09mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J14-MP2(120.991mm,94.79mm) on Top Layer And Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J1-MP1(75.413mm,111.05mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J1-MP2(75.413mm,106.1mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J2-MP1(75.413mm,102.942mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J2-MP2(75.413mm,97.992mm) on Top Layer And Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J4-MP1(88.516mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J4-MP2(83.566mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J5-MP1(80.443mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J5-MP2(75.493mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J6-MP1(104.827mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J6-MP2(99.877mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J7-MP1(96.644mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J7-MP2(91.694mm,117.221mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J8-MP1(121.083mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J8-MP2(116.133mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J9-MP1(112.955mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+   Violation between Short-Circuit Constraint: Between Pad J9-MP2(108.005mm,117.246mm) on Top Layer And Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Location : [X = 0mm][Y = 0mm]
+Rule Violations :22
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C9-1(89.408mm,90.615mm) on Top Layer And Pad C10-1(91.567mm,90.283mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C10-1(91.567mm,90.283mm) on Top Layer And Pad R11-1(94.369mm,90.293mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C9-2(89.408mm,88.963mm) on Top Layer And Pad C10-2(91.567mm,89.549mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C10-2(91.567mm,89.549mm) on Top Layer And Pad R10-2(94.369mm,86.901mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C2-1(107.823mm,87.517mm) on Top Layer And Pad C1-1(109.982mm,87.185mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C1-1(109.982mm,87.185mm) on Top Layer And Pad R1-1(112.122mm,84.963mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C11-1(98.298mm,93.281mm) on Top Layer And Pad C21-1(104.154mm,93.599mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U3-6(97.941mm,90.411mm) on Top Layer And Pad C11-1(98.298mm,93.281mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C11-2(98.298mm,94.933mm) on Top Layer And Pad IC1-3(101.801mm,99.064mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C11-2(98.298mm,94.933mm) on Top Layer And Pad U3-3(99.441mm,90.411mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C2-2(107.823mm,88.251mm) on Top Layer And Pad C1-2(109.982mm,88.837mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C12-1(78.033mm,81.28mm) on Top Layer And Pad S1-1(80.98mm,76.649mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C13-1(91.567mm,81.28mm) on Top Layer And Pad R7-2(97.036mm,81.388mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C13-1(91.567mm,81.28mm) on Top Layer And Pad S2-1(93.319mm,76.649mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetC14_1 Between Pad C14-1(86.496mm,106.4mm) on Top Layer And Pad U4-9(88.127mm,105.906mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R19-1(85.433mm,107.924mm) on Top Layer And Pad C14-2(85.762mm,106.4mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C14-2(85.762mm,106.4mm) on Top Layer And Pad U4-10(88.127mm,105.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U4-3(89.939mm,107.468mm) on Top Layer And Pad C15-1(90.465mm,109.247mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R21-1(89.308mm,109.976mm) on Top Layer And Pad C15-2(91.199mm,109.247mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-2(90.439mm,107.468mm) on Top Layer And Pad C15-2(91.199mm,109.247mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net XIN32 Between Pad U4-27(91.251mm,106.406mm) on Top Layer And Pad C16-1(93.237mm,106.451mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net XIN32 Between Pad C16-1(93.237mm,106.451mm) on Top Layer And Pad Y1-1(95.396mm,107.068mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-2(90.439mm,107.468mm) on Top Layer And Pad C16-2(93.237mm,107.471mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net XOUT32 Between Pad U4-26(91.251mm,105.906mm) on Top Layer And Pad C17-1(93.237mm,105.185mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net XOUT32 Between Pad C17-1(93.237mm,105.185mm) on Top Layer And Pad Y1-2(95.396mm,104.568mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-25(91.251mm,105.406mm) on Top Layer And Pad C17-2(93.237mm,104.165mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC18_1 Between Pad IC1-10(104.701mm,99.064mm) on Top Layer [Unplated] And Pad C18-1(108.331mm,99.657mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC18_1 Between Pad C18-1(108.331mm,99.657mm) on Top Layer And Pad J14-2(115.241mm,92.44mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C19-2(108.331mm,97.644mm) on Top Layer And Pad C18-2(108.331mm,100.457mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC1-11(104.701mm,99.564mm) on Top Layer [Unplated] And Pad C18-2(108.331mm,100.457mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC19_1 Between Pad IC1-9(104.701mm,98.564mm) on Top Layer [Unplated] And Pad C19-1(108.331mm,98.444mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC19_1 Between Pad C19-1(108.331mm,98.444mm) on Top Layer And Pad J14-1(115.241mm,90.44mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C20-1(103.759mm,95.758mm) on Top Layer And Pad C21-1(104.154mm,93.599mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C20-1(103.759mm,95.758mm) on Top Layer And Pad IC1-8(104.001mm,97.864mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C21-2(104.888mm,93.599mm) on Top Layer And Pad C20-2(105.411mm,95.758mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC1-11(104.701mm,99.564mm) on Top Layer [Unplated] And Pad C20-2(105.411mm,95.758mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C21-1(104.154mm,93.599mm) on Top Layer And Pad C2-1(107.823mm,87.517mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C21-2(104.888mm,93.599mm) on Top Layer And Pad C2-2(107.823mm,88.251mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_5V Between Pad C4-1(84.779mm,76.581mm) on Top Layer And Pad C3-1(84.779mm,79.121mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_5V Between Pad U2-3(80.543mm,89.267mm) on Top Layer [Unplated] And Pad C3-1(84.779mm,79.121mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-2(86.43mm,76.581mm) on Top Layer And Pad C3-2(86.43mm,79.121mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_5V Between Pad C4-1(84.779mm,76.581mm) on Top Layer And Pad D1-1(86.438mm,73.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D2-2(86.36mm,70.383mm) on Top Layer And Pad C4-2(86.43mm,76.581mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad S1-1(80.98mm,76.649mm) on Top Layer [Unplated] And Pad C4-2(86.43mm,76.581mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C4-2(86.43mm,76.581mm) on Top Layer And Pad S2-1(93.319mm,76.649mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net CHIP_PU Between Pad C5-1(117.227mm,84.963mm) on Top Layer And Pad R2-1(120.396mm,84.963mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C5-2(115.945mm,84.963mm) on Top Layer And Pad J14-MP1(120.991mm,88.09mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C5-2(115.945mm,84.963mm) on Top Layer And Pad U1-43(116.332mm,75.771mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetC6_1 Between Pad R7-1(97.036mm,82.188mm) on Top Layer And Pad C6-1(99.068mm,82.556mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R7-2(97.036mm,81.388mm) on Top Layer And Pad C6-2(99.068mm,81.274mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U3-29(98.941mm,88.011mm) on Top Layer And Pad C6-2(99.068mm,81.274mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_5V Between Pad C8-1(75.565mm,89.676mm) on Top Layer And Pad C7-1(77.851mm,89.344mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_5V Between Pad C7-1(77.851mm,89.344mm) on Top Layer And Pad U2-3(80.543mm,89.267mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C8-2(75.565mm,90.41mm) on Top Layer And Pad C7-2(77.851mm,90.996mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C7-2(77.851mm,90.996mm) on Top Layer And Pad U2-1(80.543mm,93.867mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J2-MP2(75.413mm,97.992mm) on Top Layer [Unplated] And Pad C8-2(75.565mm,90.41mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad C9-1(89.408mm,90.615mm) on Top Layer And Pad R6-2(90.126mm,93.853mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U2-4(86.843mm,91.567mm) on Top Layer [Unplated] And Pad C9-1(89.408mm,90.615mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad C9-2(89.408mm,88.963mm) on Top Layer And Pad D9-1(89.42mm,95.504mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_5V Between Pad D5-1(81.583mm,73.406mm) on Top Layer And Pad D1-1(86.438mm,73.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VBUS Between Pad D1-2(89.838mm,73.406mm) on Top Layer And Pad R3-2(95.639mm,81.276mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VBUS Between Track (86.36mm,69.063mm)(86.36mm,69.103mm) on Top Layer And Pad D1-2(89.838mm,73.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D2-2(86.36mm,70.383mm) on Top Layer And Pad D3-2(89.304mm,70.383mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D8-2(82.846mm,70.383mm) on Top Layer And Pad D2-2(86.36mm,70.383mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D3-2(89.304mm,70.383mm) on Top Layer And Pad D4-2(92.225mm,70.383mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D4-2(92.225mm,70.383mm) on Top Layer And Pad LED1-1(98.64mm,69.057mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VBUSB Between Track (76.83mm,69.063mm)(76.83mm,69.103mm) on Top Layer And Pad D5-2(78.183mm,73.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VBUSB Between Pad D6-1(76.83mm,69.063mm) on Top Layer And Pad J12-1(78.583mm,66.096mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D6-2(76.83mm,70.383mm) on Top Layer And Pad D7-2(79.883mm,70.383mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D7-2(79.883mm,70.383mm) on Top Layer And Pad D8-2(82.846mm,70.383mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad D7-2(79.883mm,70.383mm) on Top Layer And Pad J12-4(80.533mm,66.096mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GPIO20 Between Pad D8-1(82.846mm,69.063mm) on Top Layer And Pad U1-14(105.172mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R20-2(87.653mm,100.336mm) on Top Layer And Pad D9-1(89.42mm,95.504mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetD9_2 Between Pad D9-2(90.92mm,95.504mm) on Top Layer And Pad R6-1(90.976mm,93.853mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad LED1-1(98.64mm,69.057mm) on Top Layer [Unplated] And Pad DS1-2(100.572mm,66.675mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetIC1_1 Between Pad IC1-1(101.801mm,100.064mm) on Top Layer [Unplated] And Pad U1-6(115.332mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad IC1-3(101.801mm,99.064mm) on Top Layer [Unplated] And Pad IC1-11(104.701mm,99.564mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetIC1_14 Between Pad IC1-14(103.501mm,100.764mm) on Top Layer [Unplated] And Pad U1-5(116.602mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetIC1_15 Between Pad IC1-15(103.001mm,100.764mm) on Top Layer [Unplated] And Pad IC1-17(103.251mm,99.314mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetIC1_16 Between Pad IC1-16(102.501mm,100.764mm) on Top Layer [Unplated] And Pad U1-4(117.872mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetIC1_4 Between Pad R22-1(100.457mm,98.469mm) on Top Layer And Pad IC1-4(101.801mm,98.564mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad IC1-7(103.501mm,97.864mm) on Top Layer [Unplated] And Pad IC1-8(104.001mm,97.864mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad R22-2(100.457mm,97.619mm) on Top Layer And Pad IC1-7(103.501mm,97.864mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J10-1(118.11mm,99.969mm) on Top Layer [Unplated] And Pad J10-MP1(121.31mm,98.119mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH6 Between Pad U1-10(110.252mm,81.661mm) on Top Layer [Unplated] And Pad J10-2(118.11mm,101.219mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J10-MP1(121.31mm,98.119mm) on Top Layer [Unplated] And Pad J10-MP2(121.31mm,103.069mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J14-MP2(120.991mm,94.79mm) on Top Layer [Unplated] And Pad J10-MP1(121.31mm,98.119mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J10-MP2(121.31mm,103.069mm) on Top Layer [Unplated] And Pad J11-MP1(121.31mm,106.227mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-MP1(75.413mm,111.05mm) on Top Layer [Unplated] And Pad J1-1(78.613mm,109.2mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J5-1(78.593mm,114.046mm) on Top Layer [Unplated] And Pad J1-1(78.613mm,109.2mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J11-1(118.11mm,108.077mm) on Top Layer [Unplated] And Pad J11-MP1(121.31mm,106.227mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC1_CH7 Between Pad U1-12(107.712mm,81.661mm) on Top Layer [Unplated] And Pad J11-2(118.11mm,109.327mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J11-MP1(121.31mm,106.227mm) on Top Layer [Unplated] And Pad J11-MP2(121.31mm,111.177mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J8-1(119.233mm,114.046mm) on Top Layer [Unplated] And Pad J11-MP2(121.31mm,111.177mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH0 Between Pad J1-2(78.613mm,107.95mm) on Top Layer [Unplated] And Pad U1-19(103.922mm,74.816mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J12-4(80.533mm,66.096mm) on Top Layer And Pad J12-5(81.183mm,66.096mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J12-7(81.033mm,63.246mm) on Top Layer And Pad J12-5(81.183mm,66.096mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J12-6(78.733mm,63.246mm) on Top Layer And Pad J12-7(81.033mm,63.246mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J12-8(76.133mm,63.246mm) on Top Layer And Pad J12-6(78.733mm,63.246mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J12-7(81.033mm,63.246mm) on Top Layer And Pad J12-9(83.633mm,63.246mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J12-9(83.633mm,63.246mm) on Top Layer And Pad J3-8(86.286mm,63.246mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J14-MP1(120.991mm,88.09mm) on Top Layer [Unplated] And Pad J14-MP2(120.991mm,94.79mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J14-MP1(120.991mm,88.09mm) on Top Layer [Unplated] And Pad U1-1(121.682mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J1-MP2(75.413mm,106.1mm) on Top Layer [Unplated] And Pad J1-MP1(75.413mm,111.05mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J2-MP1(75.413mm,102.942mm) on Top Layer [Unplated] And Pad J1-MP2(75.413mm,106.1mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J2-MP1(75.413mm,102.942mm) on Top Layer [Unplated] And Pad J2-1(78.613mm,101.092mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC1_CH0 Between Pad J2-2(78.613mm,99.842mm) on Top Layer [Unplated] And Pad U1-39(120.412mm,64.161mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J2-MP2(75.413mm,97.992mm) on Top Layer [Unplated] And Pad J2-MP1(75.413mm,102.942mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-4(90.686mm,66.096mm) on Top Layer And Pad J3-5(91.336mm,66.096mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-7(91.186mm,63.246mm) on Top Layer And Pad J3-5(91.336mm,66.096mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-6(88.886mm,63.246mm) on Top Layer And Pad J3-7(91.186mm,63.246mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-8(86.286mm,63.246mm) on Top Layer And Pad J3-6(88.886mm,63.246mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J3-7(91.186mm,63.246mm) on Top Layer And Pad J3-9(93.786mm,63.246mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-1(86.666mm,114.021mm) on Top Layer [Unplated] And Pad J4-MP1(88.516mm,117.221mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-1(86.666mm,114.021mm) on Top Layer [Unplated] And Pad R21-1(89.308mm,109.976mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH1 Between Pad J4-2(85.416mm,114.021mm) on Top Layer [Unplated] And Pad U1-20(103.922mm,73.546mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-MP2(83.566mm,117.221mm) on Top Layer [Unplated] And Pad J4-MP1(88.516mm,117.221mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J4-MP1(88.516mm,117.221mm) on Top Layer [Unplated] And Pad J7-MP2(91.694mm,117.221mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J5-MP1(80.443mm,117.246mm) on Top Layer [Unplated] And Pad J4-MP2(83.566mm,117.221mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J5-1(78.593mm,114.046mm) on Top Layer [Unplated] And Pad J5-MP1(80.443mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC1_CH1 Between Pad J5-2(77.343mm,114.046mm) on Top Layer [Unplated] And Pad U1-38(119.142mm,64.161mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J5-MP2(75.493mm,117.246mm) on Top Layer [Unplated] And Pad J5-MP1(80.443mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J6-1(102.977mm,114.046mm) on Top Layer [Unplated] And Pad J6-MP1(104.827mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH4 Between Pad J6-2(101.727mm,114.046mm) on Top Layer [Unplated] And Pad U1-8(112.792mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J6-MP2(99.877mm,117.246mm) on Top Layer [Unplated] And Pad J6-MP1(104.827mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J6-MP1(104.827mm,117.246mm) on Top Layer [Unplated] And Pad J9-MP2(108.005mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J7-MP1(96.644mm,117.221mm) on Top Layer [Unplated] And Pad J6-MP2(99.877mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J7-1(94.794mm,114.021mm) on Top Layer [Unplated] And Pad J7-MP1(96.644mm,117.221mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC1_CH2 Between Pad J7-2(93.544mm,114.021mm) on Top Layer [Unplated] And Pad U1-15(103.922mm,79.896mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J7-MP2(91.694mm,117.221mm) on Top Layer [Unplated] And Pad J7-MP1(96.644mm,117.221mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J8-1(119.233mm,114.046mm) on Top Layer [Unplated] And Pad J8-MP1(121.083mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH5 Between Pad U1-9(111.522mm,81.661mm) on Top Layer [Unplated] And Pad J8-2(117.983mm,114.046mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J8-MP2(116.133mm,117.246mm) on Top Layer [Unplated] And Pad J8-MP1(121.083mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J9-MP1(112.955mm,117.246mm) on Top Layer [Unplated] And Pad J8-MP2(116.133mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J9-1(111.105mm,114.046mm) on Top Layer [Unplated] And Pad J9-MP1(112.955mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC1_CH6 Between Pad J9-2(109.855mm,114.046mm) on Top Layer [Unplated] And Pad U1-7(114.062mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad J9-MP2(108.005mm,117.246mm) on Top Layer [Unplated] And Pad J9-MP1(112.955mm,117.246mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad R11-1(94.369mm,90.293mm) on Top Layer And Pad LED1-3(95.34mm,70.857mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net RTS Between Pad Q1-2(80.416mm,85.09mm) on Top Layer And Pad R8-2(81.896mm,83.566mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net RTS Between Pad Q1-2(80.416mm,85.09mm) on Top Layer And Pad U3-24(101.341mm,87.511mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetQ1_3 Between Pad Q1-3(81.382mm,87.122mm) on Top Layer And Pad R5-1(87.282mm,83.566mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net DTR Between Pad Q2-1(87.681mm,85.09mm) on Top Layer And Pad R5-2(88.232mm,83.566mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net DTR Between Pad Q2-1(87.681mm,85.09mm) on Top Layer And Pad U3-28(101.341mm,89.511mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetQ2_2 Between Pad Q2-2(85.75mm,85.09mm) on Top Layer And Pad R9-1(85.998mm,83.566mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR10_1 Between Pad R10-1(94.369mm,87.851mm) on Top Layer And Pad U3-11(96.216mm,88.011mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R10-2(94.369mm,86.901mm) on Top Layer And Pad U3-29(98.941mm,88.011mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad R11-1(94.369mm,90.293mm) on Top Layer And Pad U3-7(97.441mm,90.411mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR11_2 Between Pad R11-2(94.369mm,89.285mm) on Top Layer And Pad U3-9(96.541mm,89.011mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net ESP_3V3 Between Pad R1-2(112.922mm,84.963mm) on Top Layer And Pad R2-2(121.346mm,84.963mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GPIO38 Between Pad R12-1(100.546mm,70.065mm) on Top Layer And Pad U1-31(110.252mm,64.161mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetR13_1 Between Pad U3-25(101.616mm,88.011mm) on Top Layer And Pad R13-1(102.859mm,88.011mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net TXD0 Between Pad R13-2(103.659mm,88.011mm) on Top Layer And Pad U1-37(117.872mm,64.161mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net NetR14_1 Between Pad U3-26(101.341mm,88.511mm) on Top Layer And Pad R14-1(102.859mm,88.9mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net RXD0 Between Pad R14-2(103.659mm,88.9mm) on Top Layer And Pad U1-36(116.602mm,64.161mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH2 Between Pad R16-1(86.444mm,104.876mm) on Top Layer And Pad U4-11(88.127mm,104.906mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad R16-2(85.494mm,104.876mm) on Top Layer And Pad U4-4(89.439mm,107.468mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR17_1 Between Pad R17-1(91.463mm,101.287mm) on Top Layer And Pad U1-11(108.982mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad R18-2(89.558mm,100.336mm) on Top Layer And Pad R17-2(91.463mm,100.336mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U4-28(91.251mm,106.906mm) on Top Layer And Pad R17-2(91.463mm,100.336mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR18_1 Between Pad R18-1(89.558mm,101.287mm) on Top Layer And Pad U1-17(103.922mm,77.356mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad R18-2(89.558mm,100.336mm) on Top Layer And Pad R6-2(90.126mm,93.853mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR19_2 Between Pad R19-2(86.383mm,107.924mm) on Top Layer And Pad U4-6(88.127mm,107.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R20-2(87.653mm,100.336mm) on Top Layer And Pad U4-15(88.127mm,102.906mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net CHIP_PU Between Pad U1-3(119.142mm,81.661mm) on Top Layer [Unplated] And Pad R2-1(120.396mm,84.963mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetR21_2 Between Pad U4-5(88.939mm,107.468mm) on Top Layer And Pad R21-2(89.308mm,109.026mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net ESP_3V3 Between Pad U1-2(120.412mm,81.661mm) on Top Layer [Unplated] And Pad R2-2(121.346mm,84.963mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC6_1 Between Pad R3-1(95.639mm,82.3mm) on Top Layer And Pad R7-1(97.036mm,82.188mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net CHIP_PU Between Pad R4-2(79.812mm,83.566mm) on Top Layer And Track (89.169mm,79.649mm)(90.8mm,81.28mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net NetC6_1 Between Pad U3-8(96.541mm,89.511mm) on Top Layer And Pad R7-1(97.036mm,82.188mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GPIO0 Between Pad R9-2(85.198mm,83.566mm) on Top Layer And Pad U1-27(105.172mm,64.161mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GPIO19 Between Track (79.233mm,68.373mm)(79.883mm,69.023mm) on Top Layer And Pad U1-13(106.442mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH2 Between Pad U4-11(88.127mm,104.906mm) on Top Layer And Pad U1-21(103.922mm,72.276mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net ADC2_CH3 Between Pad U4-14(88.127mm,103.406mm) on Top Layer And Pad U1-22(103.922mm,71.006mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net CHIP_PU Between Track (89.169mm,79.649mm)(90.8mm,81.28mm) on Top Layer And Pad U1-3(119.142mm,81.661mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-48(117.832mm,72.771mm) on Top Layer [Unplated] And Pad U1-40(121.682mm,64.161mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-41(116.332mm,74.271mm) on Top Layer [Unplated] And Pad U1-43(116.332mm,75.771mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-47(116.332mm,72.771mm) on Top Layer [Unplated] And Pad U1-41(116.332mm,74.271mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-41(116.332mm,74.271mm) on Top Layer [Unplated] And Pad U1-49(117.832mm,74.271mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-43(116.332mm,75.771mm) on Top Layer [Unplated] And Pad U1-42(117.832mm,75.771mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-44(114.832mm,75.771mm) on Top Layer [Unplated] And Pad U1-43(116.332mm,75.771mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-45(114.832mm,74.271mm) on Top Layer [Unplated] And Pad U1-44(114.832mm,75.771mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-46(114.832mm,72.771mm) on Top Layer [Unplated] And Pad U1-47(116.332mm,72.771mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U1-47(116.332mm,72.771mm) on Top Layer [Unplated] And Pad U1-48(117.832mm,72.771mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U2-2(80.543mm,91.567mm) on Top Layer [Unplated] And Pad U2-4(86.843mm,91.567mm) on Top Layer [Unplated] 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U3-29(98.941mm,88.011mm) on Top Layer And Pad U3-3(99.441mm,90.411mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net USB_DP Between Track (90.036mm,66.096mm)(90.105mm,66.165mm) on Top Layer And Pad U3-4(98.941mm,90.736mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net USB_DN Between Track (89.304mm,69.023mm)(89.386mm,68.941mm) on Top Layer And Pad U3-5(98.441mm,90.411mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U3-7(97.441mm,90.411mm) on Top Layer And Pad U3-6(97.941mm,90.411mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-15(88.127mm,102.906mm) on Top Layer And Pad U4-10(88.127mm,105.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-10(88.127mm,105.406mm) on Top Layer And Pad U4-25(91.251mm,105.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-15(88.127mm,102.906mm) on Top Layer And Pad U4-16(88.939mm,102.844mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-16(88.939mm,102.844mm) on Top Layer And Pad U4-18(89.939mm,102.844mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad U4-2(90.439mm,107.468mm) on Top Layer And Pad U4-25(91.251mm,105.406mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U4-3(89.939mm,107.468mm) on Top Layer And Pad U4-28(91.251mm,106.906mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Net VCC_3V3 Between Pad U4-4(89.439mm,107.468mm) on Top Layer And Pad U4-3(89.939mm,107.468mm) on Top Layer 
+   Violation between Un-Routed Net Constraint: Track (122.682mm,61.746mm)(122.682mm,118.491mm) on Multi-Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (74.032mm,118.491mm)(122.682mm,118.491mm) on Multi-Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (74.032mm,61.746mm)(122.682mm,61.746mm) on Multi-Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Track (74.032mm,61.746mm)(74.032mm,118.491mm) on Multi-Layer Dead Copper - Net Not Assigned.
+   Violation between Un-Routed Net Constraint: Net VBUS Between Track (86.36mm,69.063mm)(86.433mm,68.99mm) on Top Layer And Track (88.736mm,66.096mm)(88.736mm,66.596mm) on Top Layer 
+Rule Violations :200
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)
+Rule Violations :0
+
+Processing Rule : Routing Topology Rule(Topology=Shortest) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=2.54mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.254mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.254mm) (All),(All)
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,102.706mm) (88.389mm,103.106mm) on Top Solder And Area Fill (87.864mm,103.206mm) (88.389mm,103.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,103.206mm) (88.389mm,103.606mm) on Top Solder And Area Fill (87.864mm,103.706mm) (88.389mm,104.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,103.706mm) (88.389mm,104.106mm) on Top Solder And Area Fill (87.864mm,104.206mm) (88.389mm,104.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,104.206mm) (88.389mm,104.606mm) on Top Solder And Area Fill (87.864mm,104.706mm) (88.389mm,105.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,104.706mm) (88.389mm,105.106mm) on Top Solder And Area Fill (87.864mm,105.206mm) (88.389mm,105.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,105.206mm) (88.389mm,105.606mm) on Top Solder And Area Fill (87.864mm,105.706mm) (88.389mm,106.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,105.706mm) (88.389mm,106.106mm) on Top Solder And Area Fill (87.864mm,106.206mm) (88.389mm,106.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,106.206mm) (88.389mm,106.606mm) on Top Solder And Area Fill (87.864mm,106.706mm) (88.389mm,107.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (87.864mm,106.706mm) (88.389mm,107.106mm) on Top Solder And Area Fill (87.864mm,107.206mm) (88.389mm,107.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Area Fill (88.789mm,102.581mm) (89.089mm,103.106mm) on Top Solder And Area Fill (89.289mm,102.581mm) (89.589mm,103.106mm) on Top Solder [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Area Fill (88.789mm,107.206mm) (89.089mm,107.731mm) on Top Solder And Area Fill (89.289mm,107.206mm) (89.589mm,107.731mm) on Top Solder [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Area Fill (89.289mm,102.581mm) (89.589mm,103.106mm) on Top Solder And Area Fill (89.789mm,102.581mm) (90.089mm,103.106mm) on Top Solder [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Area Fill (89.289mm,107.206mm) (89.589mm,107.731mm) on Top Solder And Area Fill (89.789mm,107.206mm) (90.089mm,107.731mm) on Top Solder [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Area Fill (89.789mm,102.581mm) (90.089mm,103.106mm) on Top Solder And Area Fill (90.289mm,102.581mm) (90.589mm,103.106mm) on Top Solder [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Area Fill (89.789mm,107.206mm) (90.089mm,107.731mm) on Top Solder And Area Fill (90.289mm,107.206mm) (90.589mm,107.731mm) on Top Solder [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,102.706mm) (91.514mm,103.106mm) on Top Solder And Area Fill (90.989mm,103.206mm) (91.514mm,103.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,103.206mm) (91.514mm,103.606mm) on Top Solder And Area Fill (90.989mm,103.706mm) (91.514mm,104.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,103.706mm) (91.514mm,104.106mm) on Top Solder And Area Fill (90.989mm,104.206mm) (91.514mm,104.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,104.206mm) (91.514mm,104.606mm) on Top Solder And Area Fill (90.989mm,104.706mm) (91.514mm,105.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,104.706mm) (91.514mm,105.106mm) on Top Solder And Area Fill (90.989mm,105.206mm) (91.514mm,105.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,105.206mm) (91.514mm,105.606mm) on Top Solder And Area Fill (90.989mm,105.706mm) (91.514mm,106.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,105.706mm) (91.514mm,106.106mm) on Top Solder And Area Fill (90.989mm,106.206mm) (91.514mm,106.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,106.206mm) (91.514mm,106.606mm) on Top Solder And Area Fill (90.989mm,106.706mm) (91.514mm,107.106mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.1mm < 0.254mm) Between Area Fill (90.989mm,106.706mm) (91.514mm,107.106mm) on Top Solder And Area Fill (90.989mm,107.206mm) (91.514mm,107.606mm) on Top Solder [Top Solder] Mask Sliver [0.1mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C10-1(91.567mm,90.283mm) on Top Layer And Pad C10-2(91.567mm,89.549mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C12-1(78.033mm,81.28mm) on Top Layer And Pad C12-2(77.299mm,81.28mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C13-1(91.567mm,81.28mm) on Top Layer And Pad C13-2(90.834mm,81.28mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C14-1(86.496mm,106.4mm) on Top Layer And Pad C14-2(85.762mm,106.4mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C15-1(90.465mm,109.247mm) on Top Layer And Pad C15-2(91.199mm,109.247mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C2-1(107.823mm,87.517mm) on Top Layer And Pad C2-2(107.823mm,88.251mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C21-1(104.154mm,93.599mm) on Top Layer And Pad C21-2(104.888mm,93.599mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.15mm < 0.254mm) Between Pad C5-1(117.227mm,84.963mm) on Top Layer And Pad C5-2(115.945mm,84.963mm) on Top Layer [Top Solder] Mask Sliver [0.15mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.15mm < 0.254mm) Between Pad C6-1(99.068mm,82.556mm) on Top Layer And Pad C6-2(99.068mm,81.274mm) on Top Layer [Top Solder] Mask Sliver [0.15mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.194mm < 0.254mm) Between Pad C8-1(75.565mm,89.676mm) on Top Layer And Pad C8-2(75.565mm,90.41mm) on Top Layer [Top Solder] Mask Sliver [0.194mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.177mm < 0.254mm) Between Pad IC1-1(101.801mm,100.064mm) on Top Layer And Pad IC1-16(102.501mm,100.764mm) on Top Layer [Top Solder] Mask Sliver [0.177mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-1(101.801mm,100.064mm) on Top Layer And Pad IC1-2(101.801mm,99.564mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-10(104.701mm,99.064mm) on Top Layer And Pad IC1-11(104.701mm,99.564mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-10(104.701mm,99.064mm) on Top Layer And Pad IC1-9(104.701mm,98.564mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-11(104.701mm,99.564mm) on Top Layer And Pad IC1-12(104.701mm,100.064mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.177mm < 0.254mm) Between Pad IC1-12(104.701mm,100.064mm) on Top Layer And Pad IC1-13(104.001mm,100.764mm) on Top Layer [Top Solder] Mask Sliver [0.177mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-13(104.001mm,100.764mm) on Top Layer And Pad IC1-14(103.501mm,100.764mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-14(103.501mm,100.764mm) on Top Layer And Pad IC1-15(103.001mm,100.764mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-15(103.001mm,100.764mm) on Top Layer And Pad IC1-16(102.501mm,100.764mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-2(101.801mm,99.564mm) on Top Layer And Pad IC1-3(101.801mm,99.064mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-3(101.801mm,99.064mm) on Top Layer And Pad IC1-4(101.801mm,98.564mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.177mm < 0.254mm) Between Pad IC1-4(101.801mm,98.564mm) on Top Layer And Pad IC1-5(102.501mm,97.864mm) on Top Layer [Top Solder] Mask Sliver [0.177mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-5(102.501mm,97.864mm) on Top Layer And Pad IC1-6(103.001mm,97.864mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-6(103.001mm,97.864mm) on Top Layer And Pad IC1-7(103.501mm,97.864mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.2mm < 0.254mm) Between Pad IC1-7(103.501mm,97.864mm) on Top Layer And Pad IC1-8(104.001mm,97.864mm) on Top Layer [Top Solder] Mask Sliver [0.2mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.177mm < 0.254mm) Between Pad IC1-8(104.001mm,97.864mm) on Top Layer And Pad IC1-9(104.701mm,98.564mm) on Top Layer [Top Solder] Mask Sliver [0.177mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J12-1(78.583mm,66.096mm) on Top Layer And Pad J12-2(79.233mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J12-2(79.233mm,66.096mm) on Top Layer And Pad J12-3(79.883mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J12-3(79.883mm,66.096mm) on Top Layer And Pad J12-4(80.533mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J12-4(80.533mm,66.096mm) on Top Layer And Pad J12-5(81.183mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J3-1(88.736mm,66.096mm) on Top Layer And Pad J3-2(89.386mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J3-2(89.386mm,66.096mm) on Top Layer And Pad J3-3(90.036mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J3-3(90.036mm,66.096mm) on Top Layer And Pad J3-4(90.686mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad J3-4(90.686mm,66.096mm) on Top Layer And Pad J3-5(91.336mm,66.096mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R10-1(94.369mm,87.851mm) on Top Layer And Pad R10-2(94.369mm,86.901mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R16-1(86.444mm,104.876mm) on Top Layer And Pad R16-2(85.494mm,104.876mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R17-1(91.463mm,101.287mm) on Top Layer And Pad R17-2(91.463mm,100.336mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R18-1(89.558mm,101.287mm) on Top Layer And Pad R18-2(89.558mm,100.336mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R19-1(85.433mm,107.924mm) on Top Layer And Pad R19-2(86.383mm,107.924mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R20-1(87.653mm,101.287mm) on Top Layer And Pad R20-2(87.653mm,100.336mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R2-1(120.396mm,84.963mm) on Top Layer And Pad R2-2(121.346mm,84.963mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R21-1(89.308mm,109.976mm) on Top Layer And Pad R21-2(89.308mm,109.026mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R22-1(100.457mm,98.469mm) on Top Layer And Pad R22-2(100.457mm,97.619mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R5-1(87.282mm,83.566mm) on Top Layer And Pad R5-2(88.232mm,83.566mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R6-1(90.976mm,93.853mm) on Top Layer And Pad R6-2(90.126mm,93.853mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.25mm < 0.254mm) Between Pad R8-1(82.846mm,83.566mm) on Top Layer And Pad R8-2(81.896mm,83.566mm) on Top Layer [Top Solder] Mask Sliver [0.25mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-1(100.441mm,90.411mm) on Top Layer And Pad U3-2(99.941mm,90.411mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-10(96.541mm,88.511mm) on Top Layer And Pad U3-9(96.541mm,89.011mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-12(96.541mm,87.511mm) on Top Layer And Pad U3-13(96.541mm,87.011mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-13(96.541mm,87.011mm) on Top Layer And Pad U3-14(96.541mm,86.511mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-15(97.441mm,85.611mm) on Top Layer And Pad U3-16(97.941mm,85.611mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-16(97.941mm,85.611mm) on Top Layer And Pad U3-17(98.441mm,85.611mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-19(99.441mm,85.611mm) on Top Layer And Pad U3-20(99.941mm,85.611mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-2(99.941mm,90.411mm) on Top Layer And Pad U3-3(99.441mm,90.411mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-20(99.941mm,85.611mm) on Top Layer And Pad U3-21(100.441mm,85.611mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-22(101.341mm,86.511mm) on Top Layer And Pad U3-23(101.341mm,87.011mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-23(101.341mm,87.011mm) on Top Layer And Pad U3-24(101.341mm,87.511mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-26(101.341mm,88.511mm) on Top Layer And Pad U3-27(101.341mm,89.011mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-27(101.341mm,89.011mm) on Top Layer And Pad U3-28(101.341mm,89.511mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-5(98.441mm,90.411mm) on Top Layer And Pad U3-6(97.941mm,90.411mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-6(97.941mm,90.411mm) on Top Layer And Pad U3-7(97.441mm,90.411mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+   Violation between Minimum Solder Mask Sliver Constraint: (0.23mm < 0.254mm) Between Pad U3-8(96.541mm,89.511mm) on Top Layer And Pad U3-9(96.541mm,89.011mm) on Top Layer [Top Solder] Mask Sliver [0.23mm]
+Rule Violations :86
+
+Processing Rule : Silk To Solder Mask (Clearance=0.254mm) (IsPad),(All)
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (103.027mm,112.746mm) on Top Overlay And Pad J6-1(102.977mm,114.046mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (111.155mm,112.746mm) on Top Overlay And Pad J9-1(111.105mm,114.046mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Arc (113.291mm,90.29mm) on Top Overlay And Pad J14-1(115.241mm,90.44mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.1mm < 0.254mm) Between Arc (113.291mm,90.29mm) on Top Overlay And Pad J14-1(115.241mm,90.44mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.1mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (116.81mm,108.027mm) on Top Overlay And Pad J11-1(118.11mm,108.077mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (116.81mm,99.919mm) on Top Overlay And Pad J10-1(118.11mm,99.969mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (119.283mm,112.746mm) on Top Overlay And Pad J8-1(119.233mm,114.046mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (78.643mm,112.746mm) on Top Overlay And Pad J5-1(78.593mm,114.046mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (79.913mm,101.142mm) on Top Overlay And Pad J2-1(78.613mm,101.092mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (79.913mm,109.25mm) on Top Overlay And Pad J1-1(78.613mm,109.2mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (86.716mm,112.721mm) on Top Overlay And Pad J4-1(86.666mm,114.021mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.188mm < 0.254mm) Between Arc (92.439mm,107.406mm) on Top Overlay And Pad C16-2(93.237mm,107.471mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.188mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Arc (94.844mm,112.721mm) on Top Overlay And Pad J7-1(94.794mm,114.021mm) on Top Layer [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.235mm < 0.254mm) Between Pad DS1-1(99.072mm,66.675mm) on Top Layer And Text "DS1" (98.7mm,65.342mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.235mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad DS1-2(100.572mm,66.675mm) on Top Layer And Text "DS1" (98.7mm,65.342mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J10-1(118.11mm,99.969mm) on Top Layer And Track (118.36mm,97.719mm)(118.36mm,99.419mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J10-2(118.11mm,101.219mm) on Top Layer And Track (118.36mm,101.819mm)(118.36mm,103.469mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J10-MP1(121.31mm,98.119mm) on Top Layer And Track (122.41mm,98.819mm)(122.41mm,102.219mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J1-1(78.613mm,109.2mm) on Top Layer And Track (78.363mm,109.75mm)(78.363mm,111.45mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J11-1(118.11mm,108.077mm) on Top Layer And Track (118.36mm,105.827mm)(118.36mm,107.527mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J11-2(118.11mm,109.327mm) on Top Layer And Track (118.36mm,109.927mm)(118.36mm,111.577mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J11-MP1(121.31mm,106.227mm) on Top Layer And Track (122.41mm,106.927mm)(122.41mm,110.327mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J1-2(78.613mm,107.95mm) on Top Layer And Track (78.363mm,105.7mm)(78.363mm,107.35mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J1-MP1(75.413mm,111.05mm) on Top Layer And Track (74.313mm,106.95mm)(74.313mm,110.35mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J2-1(78.613mm,101.092mm) on Top Layer And Track (78.363mm,101.642mm)(78.363mm,103.342mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J2-2(78.613mm,99.842mm) on Top Layer And Track (78.363mm,97.592mm)(78.363mm,99.242mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J2-MP1(75.413mm,102.942mm) on Top Layer And Track (74.313mm,98.842mm)(74.313mm,102.242mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J4-1(86.666mm,114.021mm) on Top Layer And Track (87.216mm,114.271mm)(88.916mm,114.271mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J4-2(85.416mm,114.021mm) on Top Layer And Track (83.166mm,114.271mm)(84.816mm,114.271mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J4-MP1(88.516mm,117.221mm) on Top Layer And Track (84.416mm,118.321mm)(87.816mm,118.321mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J5-1(78.593mm,114.046mm) on Top Layer And Track (79.143mm,114.296mm)(80.843mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J5-2(77.343mm,114.046mm) on Top Layer And Track (75.093mm,114.296mm)(76.743mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J5-MP1(80.443mm,117.246mm) on Top Layer And Track (76.343mm,118.346mm)(79.743mm,118.346mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J6-1(102.977mm,114.046mm) on Top Layer And Track (103.527mm,114.296mm)(105.227mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J6-2(101.727mm,114.046mm) on Top Layer And Track (99.477mm,114.296mm)(101.127mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J6-MP1(104.827mm,117.246mm) on Top Layer And Track (100.727mm,118.346mm)(104.127mm,118.346mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J7-1(94.794mm,114.021mm) on Top Layer And Track (95.344mm,114.271mm)(97.044mm,114.271mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J7-2(93.544mm,114.021mm) on Top Layer And Track (91.294mm,114.271mm)(92.944mm,114.271mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J7-MP1(96.644mm,117.221mm) on Top Layer And Track (92.544mm,118.321mm)(95.944mm,118.321mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J8-1(119.233mm,114.046mm) on Top Layer And Track (119.783mm,114.296mm)(121.483mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J8-2(117.983mm,114.046mm) on Top Layer And Track (115.733mm,114.296mm)(117.383mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J8-MP1(121.083mm,117.246mm) on Top Layer And Track (116.983mm,118.346mm)(120.383mm,118.346mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad J9-1(111.105mm,114.046mm) on Top Layer And Track (111.655mm,114.296mm)(113.355mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad J9-2(109.855mm,114.046mm) on Top Layer And Track (107.605mm,114.296mm)(109.255mm,114.296mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.15mm < 0.254mm) Between Pad J9-MP1(112.955mm,117.246mm) on Top Layer And Track (108.855mm,118.346mm)(112.255mm,118.346mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.15mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.096mm < 0.254mm) Between Pad LED1-1(98.64mm,69.057mm) on Top Layer And Track (99.149mm,69.703mm)(99.149mm,70.211mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.096mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.096mm < 0.254mm) Between Pad LED1-2(98.64mm,70.857mm) on Top Layer And Track (99.149mm,69.703mm)(99.149mm,70.211mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.096mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.096mm < 0.254mm) Between Pad LED1-3(95.34mm,70.857mm) on Top Layer And Track (94.831mm,69.703mm)(94.831mm,70.211mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.096mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.096mm < 0.254mm) Between Pad LED1-4(95.34mm,69.057mm) on Top Layer And Track (94.831mm,69.703mm)(94.831mm,70.211mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.096mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad Q1-1(82.347mm,85.09mm) on Top Layer And Track (79.883mm,85.534mm)(82.868mm,85.534mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.077mm < 0.254mm) Between Pad Q1-1(82.347mm,85.09mm) on Top Layer And Track (82.868mm,85.534mm)(82.868mm,86.677mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.077mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.09mm < 0.254mm) Between Pad Q1-2(80.416mm,85.09mm) on Top Layer And Track (79.883mm,85.534mm)(79.883mm,86.677mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.09mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad Q1-2(80.416mm,85.09mm) on Top Layer And Track (79.883mm,85.534mm)(82.868mm,85.534mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad Q1-3(81.382mm,87.122mm) on Top Layer And Track (79.883mm,86.677mm)(82.868mm,86.677mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad Q2-1(87.681mm,85.09mm) on Top Layer And Track (85.217mm,85.534mm)(88.201mm,85.534mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.077mm < 0.254mm) Between Pad Q2-1(87.681mm,85.09mm) on Top Layer And Track (88.201mm,85.534mm)(88.201mm,86.677mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.077mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.09mm < 0.254mm) Between Pad Q2-2(85.75mm,85.09mm) on Top Layer And Track (85.217mm,85.534mm)(85.217mm,86.677mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.09mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad Q2-2(85.75mm,85.09mm) on Top Layer And Track (85.217mm,85.534mm)(88.201mm,85.534mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.254mm) Between Pad Q2-3(86.716mm,87.122mm) on Top Layer And Track (85.217mm,86.677mm)(88.201mm,86.677mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S1-1(80.98mm,76.649mm) on Top Layer And Track (81.005mm,77.324mm)(81.005mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S1-2(76.83mm,76.649mm) on Top Layer And Track (76.805mm,77.324mm)(76.805mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S1-3(80.98mm,78.799mm) on Top Layer And Track (81.005mm,77.324mm)(81.005mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S1-4(76.83mm,78.799mm) on Top Layer And Track (76.805mm,77.324mm)(76.805mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S2-1(93.319mm,76.649mm) on Top Layer And Track (93.344mm,77.324mm)(93.344mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S2-2(89.169mm,76.649mm) on Top Layer And Track (89.144mm,77.324mm)(89.144mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S2-3(93.319mm,78.799mm) on Top Layer And Track (93.344mm,77.324mm)(93.344mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad S2-4(89.169mm,78.799mm) on Top Layer And Track (89.144mm,77.324mm)(89.144mm,78.124mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.19mm < 0.254mm) Between Pad U1-1(121.682mm,81.661mm) on Top Layer And Track (122.422mm,81.911mm)(129.172mm,81.911mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.19mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad U1-14(105.172mm,81.661mm) on Top Layer And Track (103.672mm,81.911mm)(104.422mm,81.911mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.215mm < 0.254mm) Between Pad U1-15(103.922mm,79.896mm) on Top Layer And Track (103.672mm,80.661mm)(103.672mm,81.911mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.215mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.2mm < 0.254mm) Between Pad U1-27(105.172mm,64.161mm) on Top Layer And Track (103.672mm,63.911mm)(104.422mm,63.911mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.2mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.19mm < 0.254mm) Between Pad U1-40(121.682mm,64.161mm) on Top Layer And Track (122.422mm,63.911mm)(129.172mm,63.911mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.19mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (0.25mm < 0.254mm) Between Pad U2-1(80.543mm,93.867mm) on Top Layer And Track (79.668mm,94.692mm)(81.418mm,94.692mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.25mm]
+Rule Violations :73
+
+Processing Rule : Silk to Silk (Clearance=0.254mm) (All),(All)
+   Violation between Silk To Silk Clearance Constraint: (0.251mm < 0.254mm) Between Arc (86.36mm,68.223mm) on Top Overlay And Text "J3" (85.196mm,67.12mm) on Top Overlay Silk Text to Silk Clearance [0.251mm]
+   Violation between Silk To Silk Clearance Constraint: (0.201mm < 0.254mm) Between Text "C10" (90.901mm,91.123mm) on Top Overlay And Track (90.536mm,88.336mm)(90.536mm,91.242mm) on Top Overlay Silk Text to Silk Clearance [0.201mm]
+   Violation between Silk To Silk Clearance Constraint: (0.241mm < 0.254mm) Between Text "C15" (90.293mm,110.327mm) on Top Overlay And Track (90.196mm,109.922mm)(91.468mm,109.922mm) on Top Overlay Silk Text to Silk Clearance [0.241mm]
+   Violation between Silk To Silk Clearance Constraint: (0.225mm < 0.254mm) Between Text "Q1" (78.698mm,85.789mm) on Top Overlay And Track (79.883mm,85.534mm)(79.883mm,86.677mm) on Top Overlay Silk Text to Silk Clearance [0.225mm]
+   Violation between Silk To Silk Clearance Constraint: (0.247mm < 0.254mm) Between Text "Q2" (83.799mm,85.789mm) on Top Overlay And Track (85.217mm,85.534mm)(85.217mm,86.677mm) on Top Overlay Silk Text to Silk Clearance [0.247mm]
+Rule Violations :5
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+
+Violations Detected : 408
+Waived Violations : 0
+Time Elapsed        : 00:00:00

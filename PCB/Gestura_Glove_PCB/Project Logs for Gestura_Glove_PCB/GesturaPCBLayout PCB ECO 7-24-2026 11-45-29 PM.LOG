@@ -1,0 +1,4 @@
+Removed Member From Class: ClassName=ESP32-S3_Devkit_Replica Member=J14
+Change Component Description : Designator=U2 Old Description=80dB@(120Hz) 80 New Description=80dB@(120Hz) 80|ÌA fixed 800mA 1 3.3V 2.7V 3.3V 20V 450mV@(800mA) 0.4% (MAX) SOT-223-3
+Added Pin To Net: NetName=GPIO19 Pin=U1-13
+Added Pin To Net: NetName=GPIO20 Pin=U1-14
