@@ -134,6 +134,23 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HUCNVNED
 
+[ProjectVariant1]
+UniqueId=427ef374-7bc1-401b-996f-93bdc20b2809
+Description=Gestura_Glove_PCB DNP Variant
+AllowFabrication=1
+ParameterCount=0
+VariationCount=4
+AllowVariationPastMask=1
+Variation1=Designator=C4|UniqueId=\KNHFDVUR|Kind=1|AlternatePart=
+Variation2=Designator=R10|UniqueId=\GGVTWXJI|Kind=1|AlternatePart=
+Variation3=Designator=C12|UniqueId=\JQJSXQCL|Kind=1|AlternatePart=
+Variation4=Designator=C13|UniqueId=\CRCMQIIV|Kind=1|AlternatePart=
+ParamVariationCount=0
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Gestura_Glove_PCB\Design Rule Check - GesturaPCBLayout.html
+DItemRevisionGUID=
+
 [SearchPath1]
 Path=*.*
 IncludeSubFolders=1

@@ -1,0 +1,7 @@
+Change Component Description : Designator=U2 Old Description=80dB@(120Hz) 80 New Description=80dB@(120Hz) 80|ÌA fixed 800mA 1 3.3V 2.7V 3.3V 20V 450mV@(800mA) 0.4% (MAX) SOT-223-3
+Change Net Name : Old Net Name=NetC18_1 New Net Name=AUDIO_N
+Change Net Name : Old Net Name=NetC19_1 New Net Name=AUDIO_P
+Change Net Name : Old Net Name=USB_DN New Net Name=USB_N
+Change Net Name : Old Net Name=USB_DP New Net Name=USB_P
+Added Differential Pair: Name=AUDIO
+Added Differential Pair: Name=USB
