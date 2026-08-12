@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Gestura_Glove_PCB.PrjPcb]
+   Generated File[GesturaPCBLayout-Plated.TXT]
+   Generated File[GesturaPCBLayout.LDP]
+   Generated File[GesturaPCBLayout.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 10:18:54 PM On 8/11/2026
