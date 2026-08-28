@@ -19,11 +19,16 @@
 extern const char *FSR_TAG;
 
 // GPIO pin definitions and channel mappings for ADC and LEDC
-#define FSR_ADC_CHANNEL_0 ADC1_CHANNEL_0   // GPIO1 pin1
-#define FSR_ADC_CHANNEL_1 ADC1_CHANNEL_9   // GPIO2 pin10
-#define FSR_ADC_CHANNEL_2 ADC1_CHANNEL_6   // GPIO4 pin3 
-#define FSR_ADC_CHANNEL_3 ADC1_CHANNEL_7   // GPIO5 pin8
-#define FSR_ADC_CHANNEL_4 ADC1_CHANNEL_2   // GPIO5 pin7
+#define FSR_ADC_CHANNEL_0 ADC2_CHANNEL_0   // GPIO11 pin11
+#define FSR_ADC_CHANNEL_1 ADC2_CHANNEL_1   // GPIO12 pin12
+#define FSR_ADC_CHANNEL_2 ADC1_CHANNEL_7   // GPIO8 pin8
+#define FSR_ADC_CHANNEL_3 ADC1_CHANNEL_2   // GPIO3 pin3 
+#define FSR_ADC_CHANNEL_4 ADC2_CHANNEL_5   // GPIO16 pin16
+#define FSR_ADC_CHANNEL_5 ADC2_CHANNEL_6   // GPIO17 pin17
+#define FSR_ADC_CHANNEL_6 ADC1_CHANNEL_6   // GPIO7 pin7
+#define FSR_ADC_CHANNEL_7 ADC2_CHANNEL_4   // GPIO15 pin15
+#define FSR_ADC_CHANNEL_8 ADC1_CHANNEL_1   // GPIO2 pin2
+#define FSR_ADC_CHANNEL_9 ADC1_CHANNEL_0   // GPIO1 pin1
 
 #define FSR_PINKY_MAX 520
 #define FSR_PINKY_MIN 128
@@ -37,11 +42,19 @@ extern const char *FSR_TAG;
 #define FSR_THUMB_MIN 340
 
 typedef struct flex_data_t {
-    int fsr_pinky;
-    int fsr_ring;
-    int fsr_middle;
-    int fsr_index;
-    int fsr_thumb;
+    int fsr_thumb_1;
+    int fsr_thumb_2;   
+    int fsr_index_1;
+    int fsr_index_2;
+    int fsr_middle_1;
+    int fsr_middle_2;
+    int fsr_ring_1;
+    int fsr_ring_2;
+    int fsr_pinky_1;
+    int fsr_pinky_2;
+
+
+
 } flex_data_t;
 
 // function def
